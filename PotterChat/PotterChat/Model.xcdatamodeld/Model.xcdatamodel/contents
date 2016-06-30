@@ -3,8 +3,8 @@
     <entity name="House" representedClassName=".House" parentEntity="SyncableObject" syncable="YES">
         <attribute name="color" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="posts" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="house" inverseEntity="Post" syncable="YES"/>
-        <relationship name="users" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="houses" inverseEntity="User" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Post" inverseName="house" inverseEntity="Post" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="houses" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Post" representedClassName=".Post" parentEntity="SyncableObject" syncable="YES">
         <attribute name="text" attributeType="String" syncable="YES"/>
@@ -18,11 +18,11 @@
     </entity>
     <entity name="User" representedClassName=".User" parentEntity="SyncableObject" syncable="YES">
         <attribute name="username" attributeType="String" syncable="YES"/>
-        <relationship name="houses" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="users" inverseEntity="House" syncable="YES"/>
-        <relationship name="posts" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
+        <relationship name="houses" toMany="YES" deletionRule="Nullify" destinationEntity="House" inverseName="users" inverseEntity="House" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
     </entity>
     <elements>
-        <element name="House" positionX="160" positionY="363" width="128" height="105"/>
+        <element name="House" positionX="160" positionY="363" width="128" height="30"/>
         <element name="Post" positionX="286" positionY="231" width="128" height="90"/>
         <element name="SyncableObject" positionX="160" positionY="110" width="128" height="90"/>
         <element name="User" positionX="25" positionY="218" width="128" height="90"/>

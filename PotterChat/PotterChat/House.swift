@@ -10,8 +10,8 @@ import Foundation
 import CoreData
 
 
-class House: NSManagedObject {
+class House: SyncableObject {
 
-// Insert code here to add functionality to your managed object subclass
+
 
 }

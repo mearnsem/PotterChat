@@ -14,8 +14,8 @@ import CoreData
 
 extension Post {
 
-    @NSManaged var text: String?
-    @NSManaged var house: House?
-    @NSManaged var user: NSManagedObject?
+    @NSManaged var text: String
+    @NSManaged var house: House
+    @NSManaged var user: User
 
 }

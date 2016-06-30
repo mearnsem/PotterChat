@@ -21,11 +21,17 @@ class HouseController {
         
     }
     
-    func getPostForHouse() {
+    func getPostsForHouse() {
         
     }
     
     func saveContext() {
+        let moc = Stack.sharedStack.managedObjectContext
+        do {
+            try moc.save()
+        } catch {
+            print("Failed to save context")
+        }
         
     }
     

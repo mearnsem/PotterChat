@@ -8,12 +8,19 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var houseTextField: UITextField!
+    @IBOutlet weak var housePicker: UIPickerView!
+    
+    var houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.houseTextField.inputView = housePicker
+        housePicker.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +28,39 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func pottermoreLinkBtn(sender: AnyObject) {
+        if let url = NSURL(string: "https://www.pottermore.com/") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func submitBtn(sender: AnyObject) {
+        
+    }
+    
+    // MARK: - Picker Delegate
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return houses.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return houses[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        houseTextField.text = houses[row]
+        housePicker.hidden = true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        housePicker.hidden = false
+        return false
+    }
 
     /*
     // MARK: - Navigation

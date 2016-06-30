@@ -17,57 +17,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBL-LN-gu8">
-                                <rect key="frame" x="115" y="172" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZU-XR-9gi">
-                                <rect key="frame" x="216" y="168" width="260" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="House:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWh-QV-RJa">
-                                <rect key="frame" x="145" y="232" width="54" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEp-aU-hD7">
-                                <rect key="frame" x="216" y="228" width="260" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh5-yB-0d3">
-                                <rect key="frame" x="276" y="326" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh5-yB-0d3">
+                                <rect key="frame" x="276" y="299" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitBtn:" destination="Qmh-BL-GBK" eventType="touchUpInside" id="trD-Rv-3rh"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1Pr-5i-nyr">
+                                <rect key="frame" x="119" y="84" width="362" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GG-2D-JeH">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="BFh-f0-ywZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZ2-Hd-mbF">
+                                        <rect key="frame" x="102" y="0.0" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="fdW-hh-NHR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hnd-Wb-LHp">
+                                <rect key="frame" x="149" y="153" width="332" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWh-QV-RJa">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEp-aU-hD7">
+                                        <rect key="frame" x="72" y="0.0" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="xUq-Hs-Hne"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-jP-d11">
+                                <rect key="frame" x="154" y="234" width="293" height="30"/>
+                                <state key="normal" title="Click here to get sorted at Pottermore.com"/>
+                                <connections>
+                                    <action selector="pottermoreLinkBtn:" destination="Qmh-BL-GBK" eventType="touchUpInside" id="rAx-rK-vZq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't know your house?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlS-fX-Kgr">
+                                <rect key="frame" x="218" y="214" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-4X-lUe">
+                                <rect key="frame" x="0.0" y="337" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qmh-BL-GBK" id="YBX-vV-pY9"/>
+                                    <outlet property="delegate" destination="Qmh-BL-GBK" id="xxu-Wt-bXS"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Pr-5i-nyr" firstAttribute="trailing" secondItem="hnd-Wb-LHp" secondAttribute="trailing" id="1gw-m8-KpX"/>
+                            <constraint firstItem="hnd-Wb-LHp" firstAttribute="top" secondItem="1Pr-5i-nyr" secondAttribute="bottom" constant="39" id="5V7-RS-HKt"/>
+                            <constraint firstItem="dlS-fX-Kgr" firstAttribute="top" secondItem="hnd-Wb-LHp" secondAttribute="bottom" constant="31" id="8UT-ZL-J4r"/>
+                            <constraint firstItem="dlS-fX-Kgr" firstAttribute="centerX" secondItem="5xs-jP-d11" secondAttribute="centerX" id="K7e-pI-Vhg"/>
+                            <constraint firstItem="gh5-yB-0d3" firstAttribute="top" secondItem="dlS-fX-Kgr" secondAttribute="bottom" constant="64" id="L42-H2-LNs"/>
+                            <constraint firstItem="1Pr-5i-nyr" firstAttribute="top" secondItem="6Ss-bO-x2D" secondAttribute="bottom" constant="64" id="NSk-JO-jRd"/>
+                            <constraint firstItem="nNU-4X-lUe" firstAttribute="centerX" secondItem="gh5-yB-0d3" secondAttribute="centerX" id="SAY-oc-Gdn"/>
+                            <constraint firstItem="nNU-4X-lUe" firstAttribute="bottom" secondItem="aG5-2S-pF8" secondAttribute="top" constant="-47" id="dpn-wp-rtE"/>
+                            <constraint firstItem="gh5-yB-0d3" firstAttribute="top" secondItem="5xs-jP-d11" secondAttribute="bottom" constant="35" id="fgX-X0-6U6"/>
+                            <constraint firstItem="5xs-jP-d11" firstAttribute="centerX" secondItem="gh5-yB-0d3" secondAttribute="centerX" id="fnK-wh-6iI"/>
+                            <constraint firstItem="nNU-4X-lUe" firstAttribute="leading" secondItem="Lib-1n-gr4" secondAttribute="leading" id="g3E-o0-psZ"/>
+                            <constraint firstItem="gh5-yB-0d3" firstAttribute="top" secondItem="hnd-Wb-LHp" secondAttribute="bottom" constant="116" id="gLc-9O-7Yr"/>
+                            <constraint firstItem="1Pr-5i-nyr" firstAttribute="centerX" secondItem="gh5-yB-0d3" secondAttribute="centerX" id="s3d-qi-rHt"/>
+                            <constraint firstItem="1Pr-5i-nyr" firstAttribute="centerX" secondItem="Lib-1n-gr4" secondAttribute="centerX" id="zcz-tF-6WJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="housePicker" destination="nNU-4X-lUe" id="MXQ-Jv-pGb"/>
+                        <outlet property="houseTextField" destination="NEp-aU-hD7" id="iKA-gs-Pyf"/>
+                        <outlet property="usernameTextField" destination="BZ2-Hd-mbF" id="gTM-1a-7oN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzK-hf-caT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="275"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="chc-3W-050">
-            <objects>
-                <viewController id="iPZ-Zi-UBJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9ST-by-tHz"/>
-                        <viewControllerLayoutGuide type="bottom" id="s3O-7g-6Gv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="b3G-09-Jxg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="szV-Fh-hzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1608" y="275"/>
         </scene>
     </scenes>
 </document>

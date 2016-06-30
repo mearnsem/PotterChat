@@ -14,8 +14,8 @@ import CoreData
 
 extension User {
 
-    @NSManaged var username: String?
-    @NSManaged var houses: House?
+    @NSManaged var username: String
+    @NSManaged var houses: NSSet
     @NSManaged var posts: NSSet?
 
 }

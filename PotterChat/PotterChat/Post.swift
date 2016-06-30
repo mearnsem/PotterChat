@@ -10,8 +10,18 @@ import Foundation
 import CoreData
 
 
-class Post: NSManagedObject {
+class Post: SyncableObject {
 
-// Insert code here to add functionality to your managed object subclass
+    convenience init(text: String, house: House, user: User, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        guard let entity = NSEntityDescription.entityForName("Post", inManagedObjectContext: context) else {
+            fatalError("Failed to create entity")
+        }
+        
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        self.text = text
+        self.house = house
+        self.user = user
+    }
 
 }

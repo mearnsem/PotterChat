@@ -14,9 +14,9 @@ import CoreData
 
 extension House {
 
-    @NSManaged var color: String?
-    @NSManaged var name: String?
-    @NSManaged var posts: NSSet?
+    @NSManaged var color: String
+    @NSManaged var name: String
+    @NSManaged var posts: NSOrderedSet?
     @NSManaged var users: NSSet?
 
 }
