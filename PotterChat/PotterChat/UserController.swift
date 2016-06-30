@@ -10,6 +10,16 @@ import Foundation
 
 class UserController {
     
+    func createUser() {
+        
+    }
     
+    func deleteUser() {
+        
+    }
+    
+    func getUserForHouse() {
+        
+    }
     
 }

@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
-    <entity name="House" syncable="YES">
+    <entity name="House" representedClassName=".House" parentEntity="SyncableObject" syncable="YES">
+        <attribute name="color" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="posts" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="house" inverseEntity="Post" syncable="YES"/>
+        <relationship name="users" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="houses" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Message" parentEntity="SyncableObject" syncable="YES">
+    <entity name="Post" representedClassName=".Post" parentEntity="SyncableObject" syncable="YES">
         <attribute name="text" attributeType="String" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="messages" inverseEntity="User" syncable="YES"/>
+        <relationship name="house" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="posts" inverseEntity="House" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="SyncableObject" syncable="YES">
+    <entity name="SyncableObject" representedClassName=".SyncableObject" syncable="YES">
         <attribute name="recordIDData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="recordName" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
     </entity>
-    <entity name="User" parentEntity="SyncableObject" syncable="YES">
-        <attribute name="house" attributeType="String" syncable="YES"/>
+    <entity name="User" representedClassName=".User" parentEntity="SyncableObject" syncable="YES">
         <attribute name="username" attributeType="String" syncable="YES"/>
-        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="user" inverseEntity="Message" syncable="YES"/>
+        <relationship name="houses" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="users" inverseEntity="House" syncable="YES"/>
+        <relationship name="posts" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-54" positionY="9" width="128" height="75"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="SyncableObject" positionX="-63" positionY="18" width="128" height="90"/>
-        <element name="House" positionX="-45" positionY="45" width="128" height="60"/>
+        <element name="House" positionX="160" positionY="363" width="128" height="105"/>
+        <element name="Post" positionX="286" positionY="231" width="128" height="90"/>
+        <element name="SyncableObject" positionX="160" positionY="110" width="128" height="90"/>
+        <element name="User" positionX="25" positionY="218" width="128" height="90"/>
     </elements>
 </model>

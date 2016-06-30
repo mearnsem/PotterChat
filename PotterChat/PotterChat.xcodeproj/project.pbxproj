@@ -16,6 +16,14 @@
 		406061431D24766100978FEE /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406061421D24766100978FEE /* CloudKitManager.swift */; };
 		406061461D24767800978FEE /* HouseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406061451D24767800978FEE /* HouseController.swift */; };
 		406061481D24767F00978FEE /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406061471D24767F00978FEE /* UserController.swift */; };
+		406BF58D1D2589E7006F0572 /* House+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5851D2589E7006F0572 /* House+CoreDataProperties.swift */; };
+		406BF58E1D2589E7006F0572 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5861D2589E7006F0572 /* House.swift */; };
+		406BF58F1D2589E7006F0572 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5871D2589E7006F0572 /* Post+CoreDataProperties.swift */; };
+		406BF5901D2589E7006F0572 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5881D2589E7006F0572 /* Post.swift */; };
+		406BF5911D2589E7006F0572 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5891D2589E7006F0572 /* User+CoreDataProperties.swift */; };
+		406BF5921D2589E7006F0572 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF58A1D2589E7006F0572 /* User.swift */; };
+		406BF5931D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF58B1D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift */; };
+		406BF5941D2589E7006F0572 /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF58C1D2589E7006F0572 /* SyncableObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		406061421D24766100978FEE /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		406061451D24767800978FEE /* HouseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseController.swift; sourceTree = "<group>"; };
 		406061471D24767F00978FEE /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		406BF5851D2589E7006F0572 /* House+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "House+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		406BF5861D2589E7006F0572 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		406BF5871D2589E7006F0572 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		406BF5881D2589E7006F0572 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		406BF5891D2589E7006F0572 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		406BF58A1D2589E7006F0572 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		406BF58B1D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyncableObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		406BF58C1D2589E7006F0572 /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,14 @@
 			isa = PBXGroup;
 			children = (
 				400F8B801D1DE89C006182BD /* Model.xcdatamodeld */,
+				406BF5851D2589E7006F0572 /* House+CoreDataProperties.swift */,
+				406BF5861D2589E7006F0572 /* House.swift */,
+				406BF5871D2589E7006F0572 /* Post+CoreDataProperties.swift */,
+				406BF5881D2589E7006F0572 /* Post.swift */,
+				406BF5891D2589E7006F0572 /* User+CoreDataProperties.swift */,
+				406BF58A1D2589E7006F0572 /* User.swift */,
+				406BF58B1D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift */,
+				406BF58C1D2589E7006F0572 /* SyncableObject.swift */,
 			);
 			name = "Model Objects";
 			sourceTree = "<group>";
@@ -173,10 +197,18 @@
 			files = (
 				406061481D24767F00978FEE /* UserController.swift in Sources */,
 				400F8B6F1D1DE664006182BD /* AppDelegate.swift in Sources */,
+				406BF58F1D2589E7006F0572 /* Post+CoreDataProperties.swift in Sources */,
+				406BF58E1D2589E7006F0572 /* House.swift in Sources */,
+				406BF58D1D2589E7006F0572 /* House+CoreDataProperties.swift in Sources */,
+				406BF5931D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift in Sources */,
 				406061461D24767800978FEE /* HouseController.swift in Sources */,
 				400F8B881D1DE979006182BD /* SignUpViewController.swift in Sources */,
+				406BF5911D2589E7006F0572 /* User+CoreDataProperties.swift in Sources */,
+				406BF5941D2589E7006F0572 /* SyncableObject.swift in Sources */,
+				406BF5921D2589E7006F0572 /* User.swift in Sources */,
 				406061431D24766100978FEE /* CloudKitManager.swift in Sources */,
 				400F8B821D1DE89C006182BD /* Model.xcdatamodeld in Sources */,
+				406BF5901D2589E7006F0572 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,15 +13,15 @@ class HouseController {
     
     static let sharedController = HouseController()
     
-    func addMessageToHouse() {
+    func addPostToHouse() {
         
     }
     
-    func deleteMessageFromHouse() {
+    func deletePostFromHouse() {
         
     }
     
-    func getMessageForHouse() {
+    func getPostForHouse() {
         
     }
     
@@ -31,23 +31,23 @@ class HouseController {
     
     // MARK: - Subscriptions
     
-    func subscribeToNewMessages() {
+    func subscribeToNewHouse() {
         
     }
     
-    func checkSubscriptionToMessages() {
+    func checkSubscriptionToHouse() {
         
     }
     
-    func addSubscriptionToMessages() {
+    func addSubscriptionToHouse() {
         
     }
     
-    func removeSubscriptionToMessages() {
+    func removeSubscriptionToHouse() {
         
     }
     
-    func toggleMessageSubscription() {
+    func toggleHouseSubscription() {
         
     }
     
