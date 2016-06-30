@@ -25,6 +25,9 @@
 		406BF5AB1D258E04006F0572 /* House+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5A91D258E04006F0572 /* House+CoreDataProperties.swift */; };
 		406BF5AC1D258E04006F0572 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AA1D258E04006F0572 /* House.swift */; };
 		406BF5AE1D25AE7A006F0572 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AD1D25AE7A006F0572 /* Stack.swift */; };
+		406BF5B01D25B59F006F0572 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */; };
+		406BF5B21D25B67D006F0572 /* HouseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5B11D25B67D006F0572 /* HouseTableViewController.swift */; };
+		406BF5B41D25D391006F0572 /* HousePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5B31D25D391006F0572 /* HousePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		406BF5A91D258E04006F0572 /* House+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "House+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		406BF5AA1D258E04006F0572 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		406BF5AD1D25AE7A006F0572 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		406BF5B11D25B67D006F0572 /* HouseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTableViewController.swift; sourceTree = "<group>"; };
+		406BF5B31D25D391006F0572 /* HousePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 		400F8B861D1DE957006182BD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				406BF5B31D25D391006F0572 /* HousePageViewController.swift */,
+				406BF5B11D25B67D006F0572 /* HouseTableViewController.swift */,
+				406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */,
 				400F8B871D1DE979006182BD /* SignUpViewController.swift */,
 			);
 			name = "View Controllers";
@@ -208,11 +217,14 @@
 				406BF5A81D258D95006F0572 /* User.swift in Sources */,
 				406061461D24767800978FEE /* HouseController.swift in Sources */,
 				400F8B881D1DE979006182BD /* SignUpViewController.swift in Sources */,
+				406BF5B41D25D391006F0572 /* HousePageViewController.swift in Sources */,
 				406BF5941D2589E7006F0572 /* SyncableObject.swift in Sources */,
+				406BF5B01D25B59F006F0572 /* PostTableViewCell.swift in Sources */,
 				406061431D24766100978FEE /* CloudKitManager.swift in Sources */,
 				406BF5A71D258D95006F0572 /* User+CoreDataProperties.swift in Sources */,
 				400F8B821D1DE89C006182BD /* Model.xcdatamodeld in Sources */,
 				406BF59B1D258AED006F0572 /* Post+CoreDataProperties.swift in Sources */,
+				406BF5B21D25B67D006F0572 /* HouseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

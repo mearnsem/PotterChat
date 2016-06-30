@@ -22,6 +22,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitBtn:" destination="Qmh-BL-GBK" eventType="touchUpInside" id="trD-Rv-3rh"/>
+                                    <segue destination="xbH-9E-kfe" kind="show" id="1go-fF-ovk"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1Pr-5i-nyr">
@@ -78,13 +79,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-4X-lUe">
-                                <rect key="frame" x="0.0" y="337" width="600" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Qmh-BL-GBK" id="YBX-vV-pY9"/>
-                                    <outlet property="delegate" destination="Qmh-BL-GBK" id="xxu-Wt-bXS"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -94,18 +88,14 @@
                             <constraint firstItem="dlS-fX-Kgr" firstAttribute="centerX" secondItem="5xs-jP-d11" secondAttribute="centerX" id="K7e-pI-Vhg"/>
                             <constraint firstItem="gh5-yB-0d3" firstAttribute="top" secondItem="dlS-fX-Kgr" secondAttribute="bottom" constant="64" id="L42-H2-LNs"/>
                             <constraint firstItem="1Pr-5i-nyr" firstAttribute="top" secondItem="6Ss-bO-x2D" secondAttribute="bottom" constant="64" id="NSk-JO-jRd"/>
-                            <constraint firstItem="nNU-4X-lUe" firstAttribute="centerX" secondItem="gh5-yB-0d3" secondAttribute="centerX" id="SAY-oc-Gdn"/>
-                            <constraint firstItem="nNU-4X-lUe" firstAttribute="bottom" secondItem="aG5-2S-pF8" secondAttribute="top" constant="-47" id="dpn-wp-rtE"/>
                             <constraint firstItem="gh5-yB-0d3" firstAttribute="top" secondItem="5xs-jP-d11" secondAttribute="bottom" constant="35" id="fgX-X0-6U6"/>
                             <constraint firstItem="5xs-jP-d11" firstAttribute="centerX" secondItem="gh5-yB-0d3" secondAttribute="centerX" id="fnK-wh-6iI"/>
-                            <constraint firstItem="nNU-4X-lUe" firstAttribute="leading" secondItem="Lib-1n-gr4" secondAttribute="leading" id="g3E-o0-psZ"/>
                             <constraint firstItem="gh5-yB-0d3" firstAttribute="top" secondItem="hnd-Wb-LHp" secondAttribute="bottom" constant="116" id="gLc-9O-7Yr"/>
                             <constraint firstItem="1Pr-5i-nyr" firstAttribute="centerX" secondItem="gh5-yB-0d3" secondAttribute="centerX" id="s3d-qi-rHt"/>
                             <constraint firstItem="1Pr-5i-nyr" firstAttribute="centerX" secondItem="Lib-1n-gr4" secondAttribute="centerX" id="zcz-tF-6WJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="housePicker" destination="nNU-4X-lUe" id="MXQ-Jv-pGb"/>
                         <outlet property="houseTextField" destination="NEp-aU-hD7" id="iKA-gs-Pyf"/>
                         <outlet property="usernameTextField" destination="BZ2-Hd-mbF" id="gTM-1a-7oN"/>
                     </connections>
@@ -114,5 +104,146 @@
             </objects>
             <point key="canvasLocation" x="962" y="275"/>
         </scene>
+        <!--House Page View Controller-->
+        <scene sceneID="TVg-Ay-bda">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xbH-9E-kfe" customClass="HousePageViewController" customModule="PotterChat" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdm-n6-s25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="275"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bdA-8b-ZPJ">
+            <objects>
+                <viewController storyboardIdentifier="house" id="F9p-bi-xMG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BMZ-iw-DEi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rni-Sc-hs2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6TO-rf-1fe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3c4-LO-xMD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hogwartscrest" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-pH-Ucf">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fZl-pH-Ucf" secondAttribute="bottom" id="Sx7-3K-yhw"/>
+                                    <constraint firstItem="fZl-pH-Ucf" firstAttribute="top" secondItem="3c4-LO-xMD" secondAttribute="top" id="jCa-NG-K9W"/>
+                                    <constraint firstItem="fZl-pH-Ucf" firstAttribute="leading" secondItem="3c4-LO-xMD" secondAttribute="leading" id="mj2-Es-aLj"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZl-pH-Ucf" secondAttribute="trailing" id="pwb-7d-mdv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3c4-LO-xMD" firstAttribute="leading" secondItem="6TO-rf-1fe" secondAttribute="leading" id="5ip-Rn-zwu"/>
+                            <constraint firstItem="3c4-LO-xMD" firstAttribute="top" secondItem="6TO-rf-1fe" secondAttribute="top" id="KoQ-sg-zPQ"/>
+                            <constraint firstItem="Rni-Sc-hs2" firstAttribute="top" secondItem="3c4-LO-xMD" secondAttribute="bottom" id="rMf-Rx-Hdm"/>
+                            <constraint firstAttribute="trailing" secondItem="3c4-LO-xMD" secondAttribute="trailing" id="yec-z6-1o4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L89-Be-paR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="949"/>
+        </scene>
+        <!--House Table View Controller-->
+        <scene sceneID="bgV-Jk-csY">
+            <objects>
+                <tableViewController storyboardIdentifier="hogwarts" id="DMC-n9-oY6" customClass="HouseTableViewController" customModule="PotterChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="qax-mK-LPN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="WgZ-Vs-uF0">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hogwartscrest" translatesAutoresizingMaskIntoConstraints="NO" id="fG3-H8-N20">
+                                    <rect key="frame" x="180" y="22" width="240" height="108"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="fG3-H8-N20" secondAttribute="bottom" id="5NG-dH-7MU"/>
+                                <constraint firstItem="fG3-H8-N20" firstAttribute="top" secondItem="WgZ-Vs-uF0" secondAttribute="top" constant="22" id="7Ui-bQ-tru"/>
+                                <constraint firstItem="fG3-H8-N20" firstAttribute="leading" secondItem="WgZ-Vs-uF0" secondAttribute="leading" constant="180" id="b39-p5-C7V"/>
+                                <constraint firstAttribute="trailing" secondItem="fG3-H8-N20" secondAttribute="trailing" constant="180" id="i8d-9X-oX1"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="81" id="6aF-Ug-AdM" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="158" width="600" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6aF-Ug-AdM" id="Hog-Un-yBV">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52N-vi-sPY">
+                                            <rect key="frame" x="8" y="8" width="584" height="65"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-k6-oXK">
+                                                    <rect key="frame" x="8" y="8" width="74" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:56 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEn-UU-VR3">
+                                                    <rect key="frame" x="522" y="8" width="54" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJQ-sv-0ZM">
+                                                    <rect key="frame" x="8" y="34" width="31" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TEn-UU-VR3" firstAttribute="top" secondItem="52N-vi-sPY" secondAttribute="top" constant="8" id="09C-bU-jb7"/>
+                                                <constraint firstItem="YJQ-sv-0ZM" firstAttribute="leading" secondItem="52N-vi-sPY" secondAttribute="leading" constant="8" id="2ub-bO-kee"/>
+                                                <constraint firstItem="Yc4-k6-oXK" firstAttribute="top" secondItem="52N-vi-sPY" secondAttribute="top" constant="8" id="Vtd-x0-Tzj"/>
+                                                <constraint firstAttribute="trailing" secondItem="TEn-UU-VR3" secondAttribute="trailing" constant="8" id="ZGh-St-w2R"/>
+                                                <constraint firstItem="Yc4-k6-oXK" firstAttribute="leading" secondItem="52N-vi-sPY" secondAttribute="leading" constant="8" id="ZWI-Jv-m3a"/>
+                                                <constraint firstAttribute="bottom" secondItem="YJQ-sv-0ZM" secondAttribute="bottom" constant="13" id="brL-hG-sMV"/>
+                                                <constraint firstItem="Yc4-k6-oXK" firstAttribute="top" secondItem="TEn-UU-VR3" secondAttribute="bottom" constant="-15" id="cnt-Lp-vKS"/>
+                                                <constraint firstItem="YJQ-sv-0ZM" firstAttribute="top" secondItem="Yc4-k6-oXK" secondAttribute="bottom" constant="8" id="sM4-XH-bPD"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="52N-vi-sPY" secondAttribute="bottom" constant="7" id="48a-9T-eeS"/>
+                                        <constraint firstItem="52N-vi-sPY" firstAttribute="leading" secondItem="Hog-Un-yBV" secondAttribute="leading" constant="8" id="JnA-VG-Sph"/>
+                                        <constraint firstItem="52N-vi-sPY" firstAttribute="top" secondItem="Hog-Un-yBV" secondAttribute="top" constant="8" id="Rng-sw-7g2"/>
+                                        <constraint firstAttribute="trailing" secondItem="52N-vi-sPY" secondAttribute="trailing" constant="8" id="Uba-eM-oz4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                                <connections>
+                                    <outlet property="bgView" destination="52N-vi-sPY" id="Zbu-bQ-uTU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DMC-n9-oY6" id="4dt-fl-8FS"/>
+                            <outlet property="delegate" destination="DMC-n9-oY6" id="c9t-1c-nQg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2FJ-AT-pfg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojZ-wT-Fqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="949"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="hogwartscrest" width="800" height="863"/>
+    </resources>
 </document>

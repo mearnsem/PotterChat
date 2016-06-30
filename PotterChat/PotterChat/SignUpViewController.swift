@@ -18,14 +18,24 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let view = UIView(frame: self.view.bounds)
+        let blurEffect = UIBlurEffect(style: .Light)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = self.view.bounds
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "galaxyHallows")
+        imageView.contentMode = .ScaleAspectFill
+        view.addSubview(imageView)
+        view.addSubview(visualEffectView)
+        
+        self.view.addSubview(view)
+        self.view.sendSubviewToBack(view)
+        
+        let housePicker = UIPickerView()
+        housePicker.delegate = self
+        housePicker.dataSource = self
         self.houseTextField.inputView = housePicker
-        housePicker.hidden = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func pottermoreLinkBtn(sender: AnyObject) {
@@ -54,11 +64,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         houseTextField.text = houses[row]
-        housePicker.hidden = true
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        housePicker.hidden = false
+        houseTextField.resignFirstResponder()
         return false
     }
 
