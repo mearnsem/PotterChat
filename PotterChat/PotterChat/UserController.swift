@@ -13,15 +13,15 @@ class UserController {
     static let sharedUserController = UserController()
     
     func createUser(username: String) {
-        
+        let _ = User(username: username)
         saveContext()
     }
     
-    func addUserToHouse(user: User, houses: [House]) {
+    func addUserToHouse(user: User) {
         
     }
     
-    func deleteUser() {
+    func deleteUser(user: User) {
         
     }
     
