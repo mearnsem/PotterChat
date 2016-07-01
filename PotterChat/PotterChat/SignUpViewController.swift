@@ -20,11 +20,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         
         let view = UIView(frame: self.view.bounds)
-        let blurEffect = UIBlurEffect(style: .Light)
+        let blurEffect = UIBlurEffect(style: .ExtraLight)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = self.view.bounds
         let imageView = UIImageView(frame: view.frame)
-        imageView.image = UIImage(named: "galaxyHallows")
+        imageView.image = UIImage(named: "bigben")
         imageView.contentMode = .ScaleAspectFill
         view.addSubview(imageView)
         view.addSubview(visualEffectView)

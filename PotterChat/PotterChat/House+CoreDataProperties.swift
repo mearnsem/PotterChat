@@ -2,7 +2,7 @@
 //  House+CoreDataProperties.swift
 //  PotterChat
 //
-//  Created by Emily Mearns on 6/30/16.
+//  Created by Emily Mearns on 7/1/16.
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

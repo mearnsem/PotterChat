@@ -12,6 +12,6 @@ import CoreData
 
 class House: SyncableObject {
 
-
+    static let keyType = "House"
 
 }

@@ -22,7 +22,7 @@
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
     </entity>
     <elements>
-        <element name="House" positionX="160" positionY="363" width="128" height="30"/>
+        <element name="House" positionX="160" positionY="363" width="128" height="105"/>
         <element name="Post" positionX="286" positionY="231" width="128" height="90"/>
         <element name="SyncableObject" positionX="160" positionY="110" width="128" height="90"/>
         <element name="User" positionX="25" positionY="218" width="128" height="90"/>
