@@ -14,6 +14,7 @@ class HouseController {
     
     static let sharedHouseController = HouseController()
     let cloudKitManager: CloudKitManager
+    var isSyncing: Bool = false
     
     init() {
         cloudKitManager = CloudKitManager()
@@ -160,15 +161,41 @@ class HouseController {
         }
     }
     
-    func pushChangesToCloudKit() {
+    func pushChangesToCloudKit(completion: ((success: Bool, error: NSError?) -> Void)?) {
+        let unsavedManagedObjects = unsyncedRecords(House.keyType)
+        let unsavedRecords = unsavedManagedObjects.flatMap({$0.cloudKitRecord})
         
+        cloudKitManager.saveRecords(unsavedRecords, perRecordCompletion: { (record, error) in
+            guard let record = record else {return}
+            if let matchingRecord = unsavedManagedObjects.filter({$0.recordName == record.recordID.recordName}).first {
+                matchingRecord.update(record)
+            }
+        }) { (records, error) in
+            if let completion = completion {
+                let success = records != nil
+                completion(success: success, error: error)
+            }
+        }
     }
     
-    func performFullSync() {
-        
+    func performFullSync(completion: (()-> Void)? = nil) {
+        if isSyncing {
+            if let completion = completion {
+                completion()
+            }
+        } else {
+            isSyncing = true
+            
+            pushChangesToCloudKit({ (success, error) in
+                self.fetchNewRecords(House.keyType, completion: {
+                    self.isSyncing = false
+                    if let completion = completion {
+                        completion()
+                    }
+                })
+            })
+        }
     }
-    
-    
 }
 
 
