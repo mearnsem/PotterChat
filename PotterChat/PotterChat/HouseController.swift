@@ -11,7 +11,18 @@ import CloudKit
 
 class HouseController {
     
-    static let sharedController = HouseController()
+    static let sharedHouseController = HouseController()
+    
+    var houses: [House] {
+        
+        let gryffindor = House(color: "Red", name: "Gryffindor")
+        let hufflepuff = House(color: "Yellow", name: "Hufflepuff")
+        let ravenclaw = House(color: "Blue", name: "Ravenclaw")
+        let slytherin = House(color: "Green", name: "Slytherin")
+        let hogwarts = House(color: "Black", name: "Hogwarts")
+        
+        return [gryffindor, hufflepuff, ravenclaw, slytherin, hogwarts]
+    }
     
     func addPostToHouse() {
         

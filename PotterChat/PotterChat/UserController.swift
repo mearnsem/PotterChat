@@ -10,7 +10,14 @@ import Foundation
 
 class UserController {
     
-    func createUser() {
+    static let sharedUserController = UserController()
+    
+    func createUser(username: String) {
+        
+        saveContext()
+    }
+    
+    func addUserToHouse(user: User, houses: [House]) {
         
     }
     
@@ -20,6 +27,15 @@ class UserController {
     
     func getUserForHouse() {
         
+    }
+    
+    func saveContext() {
+        let moc = Stack.sharedStack.managedObjectContext
+        do {
+            try moc.save()
+        } catch {
+            print("The User could not be saved")
+        }
     }
     
 }

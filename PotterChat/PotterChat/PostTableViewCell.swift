@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bgView: UIView!
@@ -31,13 +29,9 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-    }
-    
     func setupCell() {
         self.bgView.layer.cornerRadius = 12
-        self.bgView.backgroundColor = blue
+        self.bgView.backgroundColor = green
     }
 
 }
