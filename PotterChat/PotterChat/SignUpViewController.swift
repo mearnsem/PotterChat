@@ -15,10 +15,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var housePicker: UIPickerView!
     
     var houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let view = UIView(frame: self.view.bounds)
         let blurEffect = UIBlurEffect(style: .ExtraLight)
@@ -46,6 +46,10 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func submitBtn(sender: AnyObject) {
+        if let username = usernameTextField.text {
+            UserController.sharedUserController.createUser(username)
+            UserController.sharedUserController.addUserToHouses(<#T##user: User##User#>, houses: [])
+        }
         
     }
     

@@ -11,14 +11,22 @@ import Foundation
 class UserController {
     
     static let sharedUserController = UserController()
+    let cloudKitManager = CloudKitManager()
     
     func createUser(username: String) {
         let _ = User(username: username)
         saveContext()
     }
     
-    func addUserToHouse(user: User) {
-        
+    func addUserToHouses(user: User, houses: [House]) {
+        user.houses = [houses[0], houses[1]]
+        if let userRecord = user.cloudKitRecord {
+            cloudKitManager.saveRecord(userRecord, completion: { (record, error) in
+                if let record = record {
+                    user.update(record)
+                }
+            })
+        }
     }
     
     func deleteUser(user: User) {

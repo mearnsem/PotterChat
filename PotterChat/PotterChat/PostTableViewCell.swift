@@ -19,7 +19,7 @@ class PostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         setupCell()
     }
 
@@ -30,8 +30,9 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setupCell() {
+        
         self.bgView.layer.cornerRadius = 12
-        self.bgView.backgroundColor = green
+        self.bgView.backgroundColor = red
     }
 
 }

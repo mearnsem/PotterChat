@@ -22,11 +22,11 @@ class HouseController {
     
     var houses: [House] {
         
-        let gryffindor = House(color: "Red", name: "Gryffindor")
-        let hufflepuff = House(color: "Yellow", name: "Hufflepuff")
-        let ravenclaw = House(color: "Blue", name: "Ravenclaw")
-        let slytherin = House(color: "Green", name: "Slytherin")
-        let hogwarts = House(color: "Black", name: "Hogwarts")
+        let gryffindor = House(color: "red", name: "Gryffindor")
+        let hufflepuff = House(color: "yellow", name: "Hufflepuff")
+        let ravenclaw = House(color: "blue", name: "Ravenclaw")
+        let slytherin = House(color: "green", name: "Slytherin")
+        let hogwarts = House(color: "black", name: "Hogwarts")
         
         return [gryffindor, hufflepuff, ravenclaw, slytherin, hogwarts]
     }
