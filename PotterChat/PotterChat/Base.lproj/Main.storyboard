@@ -202,7 +202,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojZ-wT-Fqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="9Ug-pY-deJ"/>
             </objects>
-            <point key="canvasLocation" x="962" y="949"/>
+            <point key="canvasLocation" x="1362" y="955"/>
         </scene>
         <!--House Table View Controller-->
         <scene sceneID="QFH-H0-QTe">
@@ -216,7 +216,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gryffindorcrest" translatesAutoresizingMaskIntoConstraints="NO" id="OW4-m9-q5N">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crestSly" translatesAutoresizingMaskIntoConstraints="NO" id="OW4-m9-q5N">
                                     <rect key="frame" x="180" y="22" width="240" height="108"/>
                                 </imageView>
                             </subviews>
@@ -280,6 +280,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bgView" destination="acs-Ic-FnR" id="B8f-Lo-Ib3"/>
+                                    <outlet property="postLabel" destination="Fxq-LQ-nid" id="OwW-Nk-qSg"/>
+                                    <outlet property="timeLabel" destination="5xp-Kk-UDX" id="6HO-Hb-bp6"/>
+                                    <outlet property="usernameLabel" destination="vxY-0D-yvT" id="g0P-6P-oKC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -288,14 +291,17 @@
                             <outlet property="delegate" destination="zIc-c5-fOB" id="ZNM-Wg-aq7"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="houseCrestImageView" destination="OW4-m9-q5N" id="msG-xO-7vC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te7-8s-ycH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="949"/>
+            <point key="canvasLocation" x="2020" y="955"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gryffindorcrest" width="352" height="352"/>
+        <image name="crestSly" width="352" height="352"/>
         <image name="hogwartscrest" width="800" height="863"/>
     </resources>
 </document>

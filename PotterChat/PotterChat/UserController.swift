@@ -7,15 +7,28 @@
 //
 
 import Foundation
+import CoreData
 
 class UserController {
     
     static let sharedUserController = UserController()
     let cloudKitManager = CloudKitManager()
     
-    func createUser(username: String) {
-        let _ = User(username: username)
+    var currentUser: User {
+        let fetchRequest = NSFetchRequest(entityName: "User")
+        
+        do {
+             let users = try Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest) as! [User]
+            return users.first!
+        } catch {
+            return User()
+        }
+    }
+    
+    func createUser(username: String) -> User {
+        let user = User(username: username)
         saveContext()
+        return user
     }
     
     func addUserToHouses(user: User, houses: [House]) {

@@ -12,10 +12,25 @@ class HogwartsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestFullSync()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Functions
+    
+    func requestFullSync(completion: (()-> Void)? = nil) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        HouseController.sharedHouseController.performFullSync { 
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if let completion = completion {
+                completion()
+            }
+        }
     }
 
     // MARK: - Table view data source

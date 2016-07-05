@@ -47,10 +47,22 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func submitBtn(sender: AnyObject) {
         if let username = usernameTextField.text {
-            UserController.sharedUserController.createUser(username)
-            UserController.sharedUserController.addUserToHouses(<#T##user: User##User#>, houses: [])
+           let user = UserController.sharedUserController.createUser(username)
+            
+            var userHouses = [House]()
+            
+            let houses = HouseController.sharedHouseController.houses
+            for house in houses {
+                if house.name == "Hogwarts" {
+                    userHouses.append(house)
+                }
+                if houseTextField.text == house.name {
+                    userHouses.append(house)
+                }
+            }
+            
+            UserController.sharedUserController.addUserToHouses(user, houses: userHouses)
         }
-        
     }
     
     // MARK: - Picker Delegate
