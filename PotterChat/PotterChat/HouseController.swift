@@ -16,23 +16,37 @@ class HouseController {
     let cloudKitManager: CloudKitManager
     var isSyncing: Bool = false
     
+    static let keyGryffindor = "Gryffindor"
+    static let keyHufflepuff = "Hufflepuff"
+    static let keyRavenclaw = "Ravenclaw"
+    static let keySlytherin = "Slytherin"
+    
     init() {
         cloudKitManager = CloudKitManager()
     }
     
     var houses: [House] {
         
-        let gryffindor = House(color: "red", name: "Gryffindor")
-        let hufflepuff = House(color: "yellow", name: "Hufflepuff")
-        let ravenclaw = House(color: "blue", name: "Ravenclaw")
-        let slytherin = House(color: "green", name: "Slytherin")
+        let gryffindor = House(color: "gryffindorRed", name: "Gryffindor")
+        let hufflepuff = House(color: "hufflepuffYellow", name: "Hufflepuff")
+        let ravenclaw = House(color: "ravenclawBlue", name: "Ravenclaw")
+        let slytherin = House(color: "slytherinGreen", name: "Slytherin")
         let hogwarts = House(color: "black", name: "Hogwarts")
         
         return [gryffindor, hufflepuff, ravenclaw, slytherin, hogwarts]
     }
     
-    func addPostToHouse() {
+    func addPostToHouse(text: String, house: House, user: User) {
+        let post = Post(text: text, house: house, user: user)
+        saveContext()
         
+        if let postRecord = post.cloudKitRecord {
+            cloudKitManager.saveRecord(postRecord, completion: { (record, error) in
+                if let record = record {
+                    post.update(record)
+                }
+            })
+        }
     }
     
     func deletePostFromHouse() {

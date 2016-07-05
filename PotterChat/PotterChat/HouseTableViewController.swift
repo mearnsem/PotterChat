@@ -28,19 +28,19 @@ class HouseTableViewController: UITableViewController {
     
     func updateViewWithHouse() {
         for house in UserController.sharedUserController.currentUser.houses {
-            if house.name == "Gryffindor" {
+            if house.name == HouseController.keyGryffindor {
                 houseCrestImageView.image = UIImage(named: "crestGryff")
                 posts = house.posts
             }
-            if house.name == "Hufflepuff" {
+            if house.name == HouseController.keyHufflepuff {
                 houseCrestImageView.image = UIImage(named: "crestHuff")
                 posts = house.posts
             }
-            if house.name == "Ravenclaw" {
+            if house.name == HouseController.keyRavenclaw {
                 houseCrestImageView.image = UIImage(named: "crestRaven")
                 posts = house.posts
             }
-            if house.name == "Slytherin" {
+            if house.name == HouseController.keySlytherin {
                 houseCrestImageView.image = UIImage(named: "crestSly")
                 posts = house.posts
             }
@@ -53,7 +53,6 @@ class HouseTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("houseCell", forIndexPath: indexPath) as? PostTableViewCell

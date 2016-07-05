@@ -14,6 +14,7 @@
 		400F8B821D1DE89C006182BD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400F8B801D1DE89C006182BD /* Model.xcdatamodeld */; };
 		400F8B881D1DE979006182BD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F8B871D1DE979006182BD /* SignUpViewController.swift */; };
 		4012C4541D2C433200BA92AB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4012C4531D2C433200BA92AB /* CloudKit.framework */; };
+		4012C4561D2C58F500BA92AB /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4012C4551D2C58F500BA92AB /* DateHelpers.swift */; };
 		401584EF1D26C1B500457561 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584ED1D26C1B500457561 /* User+CoreDataProperties.swift */; };
 		401584F01D26C1B500457561 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584EE1D26C1B500457561 /* User.swift */; };
 		401584F21D26C4E600457561 /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584F11D26C4E600457561 /* CloudKitManagedObject.swift */; };
@@ -44,6 +45,7 @@
 		400F8B871D1DE979006182BD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4012C4521D2C432D00BA92AB /* PotterChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PotterChat.entitlements; sourceTree = "<group>"; };
 		4012C4531D2C433200BA92AB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		4012C4551D2C58F500BA92AB /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		401584ED1D26C1B500457561 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		401584EE1D26C1B500457561 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		401584F11D26C4E600457561 /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				400F8B6E1D1DE664006182BD /* AppDelegate.swift */,
 				400F8B721D1DE664006182BD /* Main.storyboard */,
 				406BF5AD1D25AE7A006F0572 /* Stack.swift */,
+				4012C4551D2C58F500BA92AB /* DateHelpers.swift */,
 				400F8B831D1DE8A1006182BD /* Model Objects */,
 				406061441D24766700978FEE /* Model Controllers */,
 				400F8B861D1DE957006182BD /* View Controllers */,
@@ -250,6 +253,7 @@
 				406061431D24766100978FEE /* CloudKitManager.swift in Sources */,
 				401584EF1D26C1B500457561 /* User+CoreDataProperties.swift in Sources */,
 				401584F01D26C1B500457561 /* User.swift in Sources */,
+				4012C4561D2C58F500BA92AB /* DateHelpers.swift in Sources */,
 				400F8B821D1DE89C006182BD /* Model.xcdatamodeld in Sources */,
 				406BF59B1D258AED006F0572 /* Post+CoreDataProperties.swift in Sources */,
 				406BF5B21D25B67D006F0572 /* HouseTableViewController.swift in Sources */,
