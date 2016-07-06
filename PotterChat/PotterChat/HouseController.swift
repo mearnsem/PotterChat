@@ -32,11 +32,6 @@ class HouseController {
         cloudKitManager = CloudKitManager()
     }
     
-    func mockData() {
-        addPostToHouse("Test Gryffindor", house: gryffindor, user: UserController.sharedUserController.currentUser)
-        addPostToHouse("Test Hogwarts", house: hogwarts, user: UserController.sharedUserController.currentUser)
-    }
-    
     func addPostToHouse(text: String, house: House, user: User) {
         let post = Post(text: text, house: house, user: user)
         saveContext()

@@ -23,21 +23,21 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupCell()
+        self.bgView.layer.cornerRadius = 12
+//        setupCell()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func setupCell() {
-        self.bgView.layer.cornerRadius = 12
-    }
+//    func setupCell() {
+//        
+//    }
     
     func updateWithPost(post: Post) {
         usernameLabel.text = post.user.username
+        postLabel.text = post.text
         timeLabel.text = post.timestamp.stringValue()
         
         for house in UserController.sharedUserController.currentUser.houses {

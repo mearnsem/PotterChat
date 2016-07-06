@@ -1,15 +1,15 @@
 //
-//  HouseTableViewController.swift
+//  HouseViewController.swift
 //  PotterChat
 //
-//  Created by Emily Mearns on 6/30/16.
+//  Created by Emily Mearns on 7/6/16.
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 
 import UIKit
 
-class HouseTableViewController: UITableViewController {
-    
+class HouseViewController: UIViewController {
+
     @IBOutlet weak var houseCrestImageView: UIImageView!
     
     var posts = [Post]()
@@ -20,7 +20,7 @@ class HouseTableViewController: UITableViewController {
         requestFullSync()
         updateViewWithHouse()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -30,7 +30,7 @@ class HouseTableViewController: UITableViewController {
     func requestFullSync(completion: (() -> Void)? = nil) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        HouseController.sharedHouseController.performFullSync { 
+        HouseController.sharedHouseController.performFullSync {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             if let completion = completion {
                 completion()
@@ -59,23 +59,23 @@ class HouseTableViewController: UITableViewController {
         }
         
     }
-
+    
     // MARK: - Table view data source
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("houseCell", forIndexPath: indexPath) as? PostTableViewCell
-
+        
         let post = posts[indexPath.row]
         cell?.updateWithPost(post)
-
+        
         return cell ?? PostTableViewCell()
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 75
     }
 

@@ -69,17 +69,13 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             default:
                 break
             }
-            
             if let house = userHouse {
-                let user = UserController.sharedUserController.createUser(username, house: house)
+                _ = UserController.sharedUserController.createUser(username, house: house)
             }
-            
         }
         
         if UserController.sharedUserController.currentUser != nil {
             self.performSegueWithIdentifier("pageVC", sender: nil)
-        } else {
-            
         }
     }
     
@@ -105,15 +101,5 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         houseTextField.resignFirstResponder()
         return false
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
