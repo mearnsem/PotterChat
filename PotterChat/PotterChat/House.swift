@@ -15,7 +15,7 @@ class House: SyncableObject, CloudKitManagedObject {
     static let keyType = "House"
     static let keyTimestamp = "timestamp"
     
-    convenience init(color: String, name: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(color: String, name: String, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName(House.keyType, inManagedObjectContext: context) else {
             fatalError("Failed to create House entity")
         }
@@ -23,6 +23,8 @@ class House: SyncableObject, CloudKitManagedObject {
         
         self.color = color
         self.name = name
+        self.timestamp = timestamp
+        self.recordName = nameForManagedObject()
     }
     
     var recordType: String = House.keyType

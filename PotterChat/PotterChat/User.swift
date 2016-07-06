@@ -14,13 +14,15 @@ class User: SyncableObject, CloudKitManagedObject {
 
     static let keyType = "User"
     
-    convenience init(username: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(username: String, houses: [House], timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName(User.keyType, inManagedObjectContext: context) else {
             fatalError("Failed to create User entity")
         }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.username = username
+        self.houses = NSSet(array: houses)
+        self.timestamp = timestamp
         self.recordName = self.nameForManagedObject()
     }
     

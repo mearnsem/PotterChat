@@ -171,7 +171,7 @@ class HouseController {
             self.saveContext()
         }) { (records, error) in
             if error != nil {
-                print("Error")
+                print("Error: \(error?.localizedDescription) --> \(#function)")
             }
         }
     }

@@ -18,8 +18,14 @@ class HousePageViewController: UIPageViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("\(house)")
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UserController.sharedUserController.currentUser == nil {
+//            self.performSegueWithIdentifier("toSignUpView", sender: nil)
+        }
 
         dataSource = self
         

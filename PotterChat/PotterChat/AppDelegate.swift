@@ -16,7 +16,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        
+        if UserController.sharedUserController.currentUser == nil {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginSignupVC") as! SignUpViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            return true
+            
+        } else {
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("HousePageVC") as! HousePageViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            return true
+        }
+        
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

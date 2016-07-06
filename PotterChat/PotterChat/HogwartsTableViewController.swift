@@ -15,8 +15,24 @@ class HogwartsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestFullSync()
-        updateWithHouse()
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if UserController.sharedUserController.currentUser == nil {
+//            self.performSegueWithIdentifier("toSignUpView", sender: nil)
+        } else {
+            requestFullSync()
+            updateWithHouse()
+        }
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
     }
 
     override func didReceiveMemoryWarning() {

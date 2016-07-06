@@ -14,32 +14,23 @@ class UserController {
     static let sharedUserController = UserController()
     let cloudKitManager = CloudKitManager()
     
-    var currentUser: User {
+    var currentUser: User! {
         let fetchRequest = NSFetchRequest(entityName: "User")
-        
+        var user: User!
         do {
-             let users = try Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest) as! [User]
-            return users.first!
+            let users = try Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest) as! [User]
+            user = users.first ?? nil
         } catch {
             return User()
         }
+        return user ?? nil
     }
     
-    func createUser(username: String) -> User {
-        let user = User(username: username)
+    func createUser(username: String, house: House) -> User {
+        let houses = [house, HouseController.sharedHouseController.hogwarts]
+        let user = User(username: username, houses: houses)
         saveContext()
         return user
-    }
-    
-    func addUserToHouses(user: User, house: House) {
-        user.houses = [house, HouseController.sharedHouseController.hogwarts]
-        if let userRecord = user.cloudKitRecord {
-            cloudKitManager.saveRecord(userRecord, completion: { (record, error) in
-                if let record = record {
-                    user.update(record)
-                }
-            })
-        }
     }
     
     func deleteUser(user: User) {
@@ -54,8 +45,8 @@ class UserController {
         let moc = Stack.sharedStack.managedObjectContext
         do {
             try moc.save()
-        } catch {
-            print("The User could not be saved")
+        } catch let error as NSError {
+            print("The User could not be saved. Error: \(error.localizedDescription) --> \(#function)")
         }
     }
     

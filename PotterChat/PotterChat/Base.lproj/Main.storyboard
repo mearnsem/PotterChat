@@ -9,7 +9,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="VY0-Ee-klG">
             <objects>
-                <viewController id="Qmh-BL-GBK" customClass="SignUpViewController" customModule="PotterChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginSignupVC" id="Qmh-BL-GBK" customClass="SignUpViewController" customModule="PotterChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ss-bO-x2D"/>
                         <viewControllerLayoutGuide type="bottom" id="aG5-2S-pF8"/>
@@ -23,7 +23,6 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitBtn:" destination="Qmh-BL-GBK" eventType="touchUpInside" id="trD-Rv-3rh"/>
-                                    <segue destination="xbH-9E-kfe" kind="show" id="1go-fF-ovk"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1Pr-5i-nyr">
@@ -99,6 +98,7 @@
                     <connections>
                         <outlet property="houseTextField" destination="NEp-aU-hD7" id="iKA-gs-Pyf"/>
                         <outlet property="usernameTextField" destination="BZ2-Hd-mbF" id="gTM-1a-7oN"/>
+                        <segue destination="xbH-9E-kfe" kind="show" identifier="pageVC" id="9i6-Ra-cSn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzK-hf-caT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,7 +108,7 @@
         <!--House Page View Controller-->
         <scene sceneID="TVg-Ay-bda">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xbH-9E-kfe" customClass="HousePageViewController" customModule="PotterChat" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="HousePageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xbH-9E-kfe" customClass="HousePageViewController" customModule="PotterChat" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdm-n6-s25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1644" y="275"/>
