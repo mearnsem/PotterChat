@@ -9,32 +9,23 @@
 import UIKit
 
 class HogwartsTableViewController: UITableViewController {
-
+    
     var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        if UserController.sharedUserController.currentUser == nil {
-//            self.performSegueWithIdentifier("toSignUpView", sender: nil)
-        } else {
+        if UserController.sharedUserController.currentUser != nil {
             requestFullSync()
             updateWithHouse()
         }
-
+        
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -44,7 +35,7 @@ class HogwartsTableViewController: UITableViewController {
     func requestFullSync(completion: (() -> Void)? = nil) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        HouseController.sharedHouseController.performFullSync { 
+        HouseController.sharedHouseController.performFullSync {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             if let completion = completion {
                 completion()
@@ -59,34 +50,24 @@ class HogwartsTableViewController: UITableViewController {
             }
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as? PostTableViewCell
-
+        
         let post = posts[indexPath.row]
         cell?.updateWithPost(post)
-
+        
         return cell ?? PostTableViewCell()
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 75
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

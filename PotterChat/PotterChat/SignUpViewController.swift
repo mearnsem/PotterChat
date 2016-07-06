@@ -8,20 +8,19 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var houseTextField: UITextField!
     @IBOutlet weak var housePicker: UIPickerView!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     
     var houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(tapGesture)
         
         let view = UIView(frame: self.view.bounds)
         let blurEffect = UIBlurEffect(style: .ExtraLight)
@@ -46,6 +45,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let url = NSURL(string: "https://www.pottermore.com/") {
             UIApplication.sharedApplication().openURL(url)
         }
+    }
+    
+    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
+        houseTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
     }
     
     @IBAction func submitBtn(sender: AnyObject) {

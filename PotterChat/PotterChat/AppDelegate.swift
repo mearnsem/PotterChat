@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserController.sharedUserController.currentUser == nil {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginSignupVC") as! SignUpViewController
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoginSignupVC") as! SignUpViewController
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
@@ -33,9 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("HousePageVC") as! HousePageViewController
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("HousePageVC") as! HousePageViewController
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()

@@ -22,10 +22,6 @@ class HousePageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if UserController.sharedUserController.currentUser == nil {
-//            self.performSegueWithIdentifier("toSignUpView", sender: nil)
-        }
 
         dataSource = self
         

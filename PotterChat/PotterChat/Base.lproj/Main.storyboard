@@ -97,11 +97,17 @@
                     </view>
                     <connections>
                         <outlet property="houseTextField" destination="NEp-aU-hD7" id="iKA-gs-Pyf"/>
+                        <outlet property="tapGesture" destination="hCT-8L-iwj" id="W38-HX-snn"/>
                         <outlet property="usernameTextField" destination="BZ2-Hd-mbF" id="gTM-1a-7oN"/>
                         <segue destination="xbH-9E-kfe" kind="show" identifier="pageVC" id="9i6-Ra-cSn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzK-hf-caT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hCT-8L-iwj">
+                    <connections>
+                        <action selector="viewTapped:" destination="Qmh-BL-GBK" id="HgT-JL-JDR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="962" y="275"/>
         </scene>
@@ -200,7 +206,6 @@
                     <navigationItem key="navigationItem" id="2FJ-AT-pfg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojZ-wT-Fqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="9Ug-pY-deJ"/>
             </objects>
             <point key="canvasLocation" x="1362" y="955"/>
         </scene>
