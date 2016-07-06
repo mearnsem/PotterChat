@@ -8,12 +8,20 @@
 
 import UIKit
 
-class TextFieldViewController: UIViewController {
+class TextFieldViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var postTextField: UITextField!
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
+    
+    weak var delegate: TextFieldViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(tapGesture)
 
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +29,39 @@ class TextFieldViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("Oif")
     }
-    */
+    
+    @IBAction func addPostButton(sender: AnyObject) {
+        print("Add post button pressed")
+        if let text = postTextField.text {
+            delegate?.postPost(text)
+        }
+    }
+    
+    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
+        postTextField.resignFirstResponder()
+    }
 
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+
+}
+
+protocol TextFieldViewControllerDelegate: class {
+    func postPost(text: String)
 }

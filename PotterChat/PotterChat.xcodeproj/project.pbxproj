@@ -18,7 +18,6 @@
 		401584EF1D26C1B500457561 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584ED1D26C1B500457561 /* User+CoreDataProperties.swift */; };
 		401584F01D26C1B500457561 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584EE1D26C1B500457561 /* User.swift */; };
 		401584F21D26C4E600457561 /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584F11D26C4E600457561 /* CloudKitManagedObject.swift */; };
-		401584F51D26E0DE00457561 /* HogwartsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401584F41D26E0DE00457561 /* HogwartsTableViewController.swift */; };
 		402D70981D2DADFF0002624F /* HogwartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D70971D2DADFF0002624F /* HogwartsViewController.swift */; };
 		402D709A1D2DB0760002624F /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D70991D2DB0760002624F /* HouseViewController.swift */; };
 		402D709C1D2DB5DB0002624F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402D709B1D2DB5DB0002624F /* TextFieldViewController.swift */; };
@@ -33,7 +32,6 @@
 		406BF5AC1D258E04006F0572 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AA1D258E04006F0572 /* House.swift */; };
 		406BF5AE1D25AE7A006F0572 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AD1D25AE7A006F0572 /* Stack.swift */; };
 		406BF5B01D25B59F006F0572 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */; };
-		406BF5B21D25B67D006F0572 /* HouseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5B11D25B67D006F0572 /* HouseTableViewController.swift */; };
 		406BF5B41D25D391006F0572 /* HousePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5B31D25D391006F0572 /* HousePageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +50,6 @@
 		401584ED1D26C1B500457561 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		401584EE1D26C1B500457561 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		401584F11D26C4E600457561 /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
-		401584F41D26E0DE00457561 /* HogwartsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HogwartsTableViewController.swift; sourceTree = "<group>"; };
 		402D70971D2DADFF0002624F /* HogwartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HogwartsViewController.swift; sourceTree = "<group>"; };
 		402D70991D2DB0760002624F /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		402D709B1D2DB5DB0002624F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +64,6 @@
 		406BF5AA1D258E04006F0572 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		406BF5AD1D25AE7A006F0572 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		406BF5B11D25B67D006F0572 /* HouseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTableViewController.swift; sourceTree = "<group>"; };
 		406BF5B31D25D391006F0572 /* HousePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,9 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				406BF5B31D25D391006F0572 /* HousePageViewController.swift */,
-				401584F41D26E0DE00457561 /* HogwartsTableViewController.swift */,
 				402D70971D2DADFF0002624F /* HogwartsViewController.swift */,
-				406BF5B11D25B67D006F0572 /* HouseTableViewController.swift */,
 				402D70991D2DB0760002624F /* HouseViewController.swift */,
 				406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */,
 				402D709B1D2DB5DB0002624F /* TextFieldViewController.swift */,
@@ -251,7 +245,6 @@
 				406BF5AB1D258E04006F0572 /* House+CoreDataProperties.swift in Sources */,
 				400F8B6F1D1DE664006182BD /* AppDelegate.swift in Sources */,
 				406BF5931D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift in Sources */,
-				401584F51D26E0DE00457561 /* HogwartsTableViewController.swift in Sources */,
 				406BF59C1D258AED006F0572 /* Post.swift in Sources */,
 				402D709C1D2DB5DB0002624F /* TextFieldViewController.swift in Sources */,
 				406061461D24767800978FEE /* HouseController.swift in Sources */,
@@ -268,7 +261,6 @@
 				4012C4561D2C58F500BA92AB /* DateHelpers.swift in Sources */,
 				400F8B821D1DE89C006182BD /* Model.xcdatamodeld in Sources */,
 				406BF59B1D258AED006F0572 /* Post+CoreDataProperties.swift in Sources */,
-				406BF5B21D25B67D006F0572 /* HouseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

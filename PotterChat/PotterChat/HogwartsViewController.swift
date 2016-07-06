@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HogwartsViewController: UIViewController {
-
+class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate, UIScrollViewDelegate {
+    
     var posts = [Post]()
     
     override func viewDidLoad() {
@@ -51,6 +51,12 @@ class HogwartsViewController: UIViewController {
         }
     }
     
+    // MARK: - Textfield Protocol
+    
+    func postPost(text: String) {
+        HouseController.sharedHouseController.addPostToHouse(text, house: HouseController.sharedHouseController.hogwarts, user: UserController.sharedUserController.currentUser)
+    }
+    
     // MARK: - Table view data source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +64,7 @@ class HogwartsViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as? PostTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("postCellHogwarts", forIndexPath: indexPath) as? PostTableViewCell
         
         let post = posts[indexPath.row]
         cell?.updateWithPost(post)
@@ -70,5 +76,14 @@ class HogwartsViewController: UIViewController {
         return 75
     }
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toContainerFromHogwarts" {
+            if let embedViewController = segue.destinationViewController as? TextFieldViewController {
+                embedViewController.delegate = self
+            }
+        }
+    }
 }
 

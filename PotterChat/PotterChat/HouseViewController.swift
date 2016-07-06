@@ -67,7 +67,7 @@ class HouseViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("houseCell", forIndexPath: indexPath) as? PostTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("postCellHouse", forIndexPath: indexPath) as? PostTableViewCell
         
         let post = posts[indexPath.row]
         cell?.updateWithPost(post)

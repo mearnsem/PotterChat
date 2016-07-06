@@ -73,29 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PotterChat/House.swift"
-            timestampString = "489519719.687608"
+            filePath = "PotterChat/TextFieldViewController.swift"
+            timestampString = "489540198.559258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "init(record:context:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PotterChat/House.swift"
-            timestampString = "489519719.687608"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "init(color:name:timestamp:context:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "addPostButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -151,7 +151,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="81" id="I2q-No-YYc" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellHogwarts" rowHeight="81" id="I2q-No-YYc" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="158" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I2q-No-YYc" id="J01-E3-eEM">
@@ -202,6 +202,9 @@
                                         <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
                                         <connections>
                                             <outlet property="bgView" destination="LIv-Re-f2b" id="Gvg-Ja-XEX"/>
+                                            <outlet property="postLabel" destination="vwE-WV-VFx" id="mfa-vj-RI3"/>
+                                            <outlet property="timeLabel" destination="szU-J7-Wg2" id="bcp-ey-jRs"/>
+                                            <outlet property="usernameLabel" destination="FBK-en-f6L" id="duI-wk-9B3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -266,7 +269,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="houseCell" rowHeight="81" id="AgI-od-C64" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellHouse" rowHeight="81" id="AgI-od-C64" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="158" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AgI-od-C64" id="O1G-ac-ZIo">
@@ -372,7 +375,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4yg-gP-yJV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-te-82Y">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-te-82Y">
                                         <rect key="frame" x="0.0" y="7" width="548" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="548" id="R95-ch-IdN"/>
@@ -386,6 +389,9 @@
                                             <constraint firstAttribute="width" constant="44" id="Wdw-Q4-D1u"/>
                                         </constraints>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="addPostButton:" destination="5Zc-Lp-uIY" eventType="touchUpInside" id="CoK-1z-N9h"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -398,8 +404,17 @@
                             <constraint firstAttribute="trailing" secondItem="4yg-gP-yJV" secondAttribute="trailing" id="yln-AV-7Nv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postTextField" destination="Fv9-te-82Y" id="odF-a5-iXP"/>
+                        <outlet property="tapGesture" destination="Zhm-nh-XOX" id="nHv-aF-PMw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVa-xs-uNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Zhm-nh-XOX">
+                    <connections>
+                        <action selector="viewTapped:" destination="5Zc-Lp-uIY" id="8ng-nD-L3B"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1771" y="1416"/>
         </scene>
@@ -409,6 +424,6 @@
         <image name="hogwartscrest" width="800" height="863"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ob2-ed-Vcy"/>
+        <segue reference="wfe-3e-XTF"/>
     </inferredMetricsTieBreakers>
 </document>
