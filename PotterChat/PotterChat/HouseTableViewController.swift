@@ -17,6 +17,7 @@ class HouseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestFullSync()
         updateViewWithHouse()
     }
 
@@ -25,6 +26,17 @@ class HouseTableViewController: UITableViewController {
     }
     
     // MARK: - Functions
+    
+    func requestFullSync(completion: (() -> Void)? = nil) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        HouseController.sharedHouseController.performFullSync { 
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            if let completion = completion {
+                completion()
+            }
+        }
+    }
     
     func updateViewWithHouse() {
         for house in UserController.sharedUserController.currentUser.houses {

@@ -9,13 +9,12 @@
 import UIKit
 
 class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var houseTextField: UITextField!
     @IBOutlet weak var housePicker: UIPickerView!
     
     var houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,22 +45,26 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func submitBtn(sender: AnyObject) {
-        if let username = usernameTextField.text {
-           let user = UserController.sharedUserController.createUser(username)
+        if let username = usernameTextField.text, houseString = houseTextField.text {
+            let user = UserController.sharedUserController.createUser(username)
             
-            var userHouses = [House]()
+            var userHouse: House?
             
-            let houses = HouseController.sharedHouseController.houses
-            for house in houses {
-                if house.name == "Hogwarts" {
-                    userHouses.append(house)
-                }
-                if houseTextField.text == house.name {
-                    userHouses.append(house)
-                }
+            switch houseString {
+            case "Gryffindor":
+                userHouse = HouseController.sharedHouseController.gryffindor
+            case "Hufflepuff":
+                userHouse = HouseController.sharedHouseController.hufflepuff
+            case "Ravenclaw":
+                userHouse = HouseController.sharedHouseController.ravenclaw
+            case "Slytherin":
+                userHouse = HouseController.sharedHouseController.slytherin
+            default:
+                break
             }
-            
-            UserController.sharedUserController.addUserToHouses(user, houses: userHouses)
+            if let userHouse = userHouse {
+                UserController.sharedUserController.addUserToHouses(user, house: userHouse)
+            }
         }
     }
     
@@ -87,15 +90,15 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         houseTextField.resignFirstResponder()
         return false
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

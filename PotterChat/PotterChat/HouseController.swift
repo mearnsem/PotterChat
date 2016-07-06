@@ -20,20 +20,21 @@ class HouseController {
     static let keyHufflepuff = "Hufflepuff"
     static let keyRavenclaw = "Ravenclaw"
     static let keySlytherin = "Slytherin"
+    static let keyHogwarts = "Hogwarts"
+    
+    let hogwarts = House(color: "black", name: HouseController.keyHogwarts)
+    let gryffindor = House(color: "gryffindorRed", name: HouseController.keyGryffindor)
+    let hufflepuff = House(color: "hufflepuffYellow", name: HouseController.keyHufflepuff)
+    let ravenclaw = House(color: "ravenclawBlue", name: HouseController.keyRavenclaw)
+    let slytherin = House(color: "slytherinGreen", name: HouseController.keySlytherin)
     
     init() {
         cloudKitManager = CloudKitManager()
     }
     
-    var houses: [House] {
-        
-        let gryffindor = House(color: "gryffindorRed", name: "Gryffindor")
-        let hufflepuff = House(color: "hufflepuffYellow", name: "Hufflepuff")
-        let ravenclaw = House(color: "ravenclawBlue", name: "Ravenclaw")
-        let slytherin = House(color: "slytherinGreen", name: "Slytherin")
-        let hogwarts = House(color: "black", name: "Hogwarts")
-        
-        return [gryffindor, hufflepuff, ravenclaw, slytherin, hogwarts]
+    func mockData() {
+        addPostToHouse("Test Gryffindor", house: gryffindor, user: UserController.sharedUserController.currentUser)
+        addPostToHouse("Test Hogwarts", house: hogwarts, user: UserController.sharedUserController.currentUser)
     }
     
     func addPostToHouse(text: String, house: House, user: User) {

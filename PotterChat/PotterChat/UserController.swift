@@ -31,8 +31,8 @@ class UserController {
         return user
     }
     
-    func addUserToHouses(user: User, houses: [House]) {
-        user.houses = [houses[0], houses[1]]
+    func addUserToHouses(user: User, house: House) {
+        user.houses = [house, HouseController.sharedHouseController.hogwarts]
         if let userRecord = user.cloudKitRecord {
             cloudKitManager.saveRecord(userRecord, completion: { (record, error) in
                 if let record = record {

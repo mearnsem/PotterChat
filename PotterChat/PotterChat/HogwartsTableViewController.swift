@@ -10,10 +10,13 @@ import UIKit
 
 class HogwartsTableViewController: UITableViewController {
 
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         requestFullSync()
+        updateWithHouse()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +25,7 @@ class HogwartsTableViewController: UITableViewController {
     
     // MARK: - Functions
     
-    func requestFullSync(completion: (()-> Void)? = nil) {
+    func requestFullSync(completion: (() -> Void)? = nil) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         HouseController.sharedHouseController.performFullSync { 
@@ -32,17 +35,26 @@ class HogwartsTableViewController: UITableViewController {
             }
         }
     }
+    
+    func updateWithHouse() {
+        for house in UserController.sharedUserController.currentUser.houses {
+            if house.name == HouseController.keyHogwarts {
+                posts = house.posts
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return posts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as? PostTableViewCell
 
-        
+        let post = posts[indexPath.row]
+        cell?.updateWithPost(post)
 
         return cell ?? PostTableViewCell()
     }
