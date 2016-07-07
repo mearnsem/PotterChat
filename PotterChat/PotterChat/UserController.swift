@@ -27,7 +27,16 @@ class UserController {
     }
     
     func createUser(username: String, house: House) -> User {
-        let houses = [house, HouseController.sharedHouseController.hogwarts]
+        
+        var houses: [House] = []
+        
+        for hogwarts in HouseController.sharedHouseController.housesArray {
+            if hogwarts.name == "Hogwarts" {
+                houses = [house, hogwarts]
+            }
+        }
+        
+        
         let user = User(username: username, houses: houses)
         saveContext()
         return user

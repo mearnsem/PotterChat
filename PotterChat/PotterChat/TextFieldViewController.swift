@@ -11,14 +11,11 @@ import UIKit
 class TextFieldViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var postTextField: UITextField!
-    @IBOutlet var tapGesture: UITapGestureRecognizer!
     
     weak var delegate: TextFieldViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.addGestureRecognizer(tapGesture)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
@@ -33,15 +30,15 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         print("Oif")
     }
     
+    func resignTextFieldFirstResponder() {
+        postTextField.resignFirstResponder()
+    }
+    
     @IBAction func addPostButton(sender: AnyObject) {
         print("Add post button pressed")
         if let text = postTextField.text {
             delegate?.postPost(text)
         }
-    }
-    
-    @IBAction func viewTapped(sender: UITapGestureRecognizer) {
-        postTextField.resignFirstResponder()
     }
 
     func keyboardWillShow(notification: NSNotification) {

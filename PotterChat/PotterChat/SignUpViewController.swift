@@ -56,19 +56,15 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if let username = usernameTextField.text, houseString = houseTextField.text {
             
             var userHouse: House?
+
             
-            switch houseString {
-            case "Gryffindor":
-                userHouse = HouseController.sharedHouseController.gryffindor
-            case "Hufflepuff":
-                userHouse = HouseController.sharedHouseController.hufflepuff
-            case "Ravenclaw":
-                userHouse = HouseController.sharedHouseController.ravenclaw
-            case "Slytherin":
-                userHouse = HouseController.sharedHouseController.slytherin
-            default:
-                break
+            for house in HouseController.sharedHouseController.housesArray {
+                if house.name == houseString {
+                    userHouse = house
+                }
             }
+
+            
             if let house = userHouse {
                 _ = UserController.sharedUserController.createUser(username, house: house)
             }

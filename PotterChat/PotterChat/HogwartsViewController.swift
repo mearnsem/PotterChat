@@ -11,6 +11,7 @@ import UIKit
 class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate, UIScrollViewDelegate {
     
     var posts = [Post]()
+    var textFieldVC: TextFieldViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.textFieldVC?.resignTextFieldFirstResponder()
     }
     
     // MARK: - Functions
@@ -54,7 +59,13 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     // MARK: - Textfield Protocol
     
     func postPost(text: String) {
-        HouseController.sharedHouseController.addPostToHouse(text, house: HouseController.sharedHouseController.hogwarts, user: UserController.sharedUserController.currentUser)
+        
+        for hogwarts in HouseController.sharedHouseController.housesArray {
+            if hogwarts.name == "Hogwarts" {
+                HouseController.sharedHouseController.addPostToHouse(text, house: hogwarts, user: UserController.sharedUserController.currentUser)
+            }
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -82,8 +93,11 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
         if segue.identifier == "toContainerFromHogwarts" {
             if let embedViewController = segue.destinationViewController as? TextFieldViewController {
                 embedViewController.delegate = self
+                self.textFieldVC = embedViewController
             }
         }
     }
 }
+
+
 

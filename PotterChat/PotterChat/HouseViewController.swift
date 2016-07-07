@@ -8,11 +8,12 @@
 
 import UIKit
 
-class HouseViewController: UIViewController {
+class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var houseCrestImageView: UIImageView!
     
     var posts = [Post]()
+    var textFieldVC: TextFieldViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class HouseViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.textFieldVC?.resignTextFieldFirstResponder()
     }
     
     // MARK: - Functions
@@ -60,6 +65,25 @@ class HouseViewController: UIViewController {
         
     }
     
+    // MARK: - Textfield Protocol
+    
+    func postPost(text: String) {
+        for house in HouseController.sharedHouseController.housesArray {
+            if house.name == "Gryffindor" {
+                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+            }
+            if house.name == "Hufflepuff" {
+                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+            }
+            if house.name == "Ravenclaw" {
+                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+            }
+            if house.name == "Slytherin" {
+                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+            }
+        }
+    }
+    
     // MARK: - Table view data source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,5 +102,23 @@ class HouseViewController: UIViewController {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 75
     }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toContainerFromHouse" {
+            if let embedViewController = segue.destinationViewController as? TextFieldViewController {
+                embedViewController.delegate = self
+                self.textFieldVC = embedViewController
+            }
+        }
+    }
 
 }
+
+
+
+
+
+
+

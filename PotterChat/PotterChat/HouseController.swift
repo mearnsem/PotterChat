@@ -22,14 +22,29 @@ class HouseController {
     static let keySlytherin = "Slytherin"
     static let keyHogwarts = "Hogwarts"
     
-    let hogwarts = House(color: "black", name: HouseController.keyHogwarts)
-    let gryffindor = House(color: "gryffindorRed", name: HouseController.keyGryffindor)
-    let hufflepuff = House(color: "hufflepuffYellow", name: HouseController.keyHufflepuff)
-    let ravenclaw = House(color: "ravenclawBlue", name: HouseController.keyRavenclaw)
-    let slytherin = House(color: "slytherinGreen", name: HouseController.keySlytherin)
+    var housesArray: [House] {
+        let fetchRequest = NSFetchRequest(entityName: "House")
+        
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [House] ?? []
+        return results
+    }
+
     
     init() {
         cloudKitManager = CloudKitManager()
+        
+        if housesArray.count == 0 {
+            createInitialHouses()
+        }
+    }
+    
+    func createInitialHouses() {
+        let _ = House(color: "black", name: HouseController.keyHogwarts)
+        let _ = House(color: "gryffindorRed", name: HouseController.keyGryffindor)
+        let _ = House(color: "hufflepuffYellow", name: HouseController.keyHufflepuff)
+        let _ = House(color: "ravenclawBlue", name: HouseController.keyRavenclaw)
+        let _ = House(color: "slytherinGreen", name: HouseController.keySlytherin)
+        saveContext()
     }
     
     func addPostToHouse(text: String, house: House, user: User) {
@@ -57,8 +72,8 @@ class HouseController {
         let moc = Stack.sharedStack.managedObjectContext
         do {
             try moc.save()
-        } catch {
-            print("Failed to save context")
+        } catch let error as NSError {
+            print("The House could not be saved. Error: \(error.localizedDescription) --> \(#function)")
         }
         
     }
@@ -163,7 +178,7 @@ class HouseController {
             default:
                 return
             }
-            self.saveContext()
+//            self.saveContext()
         }) { (records, error) in
             if error != nil {
                 print("Error: \(error?.localizedDescription) --> \(#function)")
