@@ -61,6 +61,7 @@ extension HousePageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
     }
     
+    /*
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return orderedViewControllers.count
     }
@@ -71,8 +72,7 @@ extension HousePageViewController: UIPageViewControllerDataSource {
         }
         return firstViewControllerIndex
     }
+    */
 }
-
-
 
 

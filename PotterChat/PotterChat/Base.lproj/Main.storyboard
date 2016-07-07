@@ -109,7 +109,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="150" y="955"/>
+            <point key="canvasLocation" x="128" y="955"/>
         </scene>
         <!--House Page View Controller-->
         <scene sceneID="TVg-Ay-bda">
