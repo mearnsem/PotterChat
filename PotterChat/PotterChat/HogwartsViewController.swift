@@ -13,22 +13,21 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     var posts = [Post]()
     var textFieldVC: TextFieldViewController?
     
+    @IBOutlet weak var hogwartsTableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        hogwartsTableview.reloadData()
         
         if UserController.sharedUserController.currentUser != nil {
             requestFullSync()
             updateWithHouse()
         }
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -51,7 +50,8 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     func updateWithHouse() {
         for house in UserController.sharedUserController.currentUser.houses {
             if house.name == HouseController.keyHogwarts {
-                posts = house.posts
+                let sortedPosts = house.posts.sort{$0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970}
+                posts = sortedPosts
             }
         }
     }
@@ -65,7 +65,8 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
                 HouseController.sharedHouseController.addPostToHouse(text, house: hogwarts, user: UserController.sharedUserController.currentUser)
             }
         }
-        
+        updateWithHouse()
+        hogwartsTableview.reloadData()
     }
     
     // MARK: - Table view data source

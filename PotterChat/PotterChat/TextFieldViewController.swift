@@ -39,6 +39,7 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         if let text = postTextField.text {
             delegate?.postPost(text)
         }
+        postTextField.text = ""
     }
 
     func keyboardWillShow(notification: NSNotification) {

@@ -15,15 +15,20 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
     var posts = [Post]()
     var textFieldVC: TextFieldViewController?
     
+    @IBOutlet weak var houseTableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        requestFullSync()
-        updateViewWithHouse()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        houseTableview.reloadData()
+        
+        if UserController.sharedUserController.currentUser != nil {
+            requestFullSync()
+            updateWithHouse()
+        }
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -43,25 +48,31 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
         }
     }
     
-    func updateViewWithHouse() {
+    func updateWithHouse() {
         for house in UserController.sharedUserController.currentUser.houses {
             if house.name == HouseController.keyGryffindor {
                 houseCrestImageView.image = UIImage(named: "crestGryff")
-                posts = house.posts
+                let sortedPosts = house.posts.sort{$0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970}
+                posts = sortedPosts
             }
             if house.name == HouseController.keyHufflepuff {
                 houseCrestImageView.image = UIImage(named: "crestHuff")
-                posts = house.posts
+                let sortedPosts = house.posts.sort{$0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970}
+                posts = sortedPosts
             }
             if house.name == HouseController.keyRavenclaw {
                 houseCrestImageView.image = UIImage(named: "crestRaven")
-                posts = house.posts
+                let sortedPosts = house.posts.sort{$0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970}
+                posts = sortedPosts
             }
             if house.name == HouseController.keySlytherin {
                 houseCrestImageView.image = UIImage(named: "crestSly")
-                posts = house.posts
+                let sortedPosts = house.posts.sort{$0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970}
+                posts = sortedPosts
             }
         }
+        
+        
         
     }
     
@@ -82,6 +93,8 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
                 HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
             }
         }
+        updateWithHouse()
+        houseTableview.reloadData()
     }
     
     // MARK: - Table view data source

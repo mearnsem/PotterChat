@@ -16,7 +16,7 @@ class Post: SyncableObject, CloudKitManagedObject {
     static let keyTimestamp = "timestamp"
     static let keyText = "text"
     
-    convenience init(text: String, house: House, user: User, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(text: String, house: House, timestamp: NSDate = NSDate(), user: User, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName(Post.keyType, inManagedObjectContext: context) else {
             fatalError("Failed to create Post entity")
         }

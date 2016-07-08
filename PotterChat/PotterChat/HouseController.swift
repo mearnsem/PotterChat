@@ -72,6 +72,7 @@ class HouseController {
         let moc = Stack.sharedStack.managedObjectContext
         do {
             try moc.save()
+            print("Save successful")
         } catch let error as NSError {
             print("The House could not be saved. Error: \(error.localizedDescription) --> \(#function)")
         }

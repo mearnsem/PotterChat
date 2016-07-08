@@ -236,6 +236,9 @@
                             <constraint firstAttribute="bottom" secondItem="nSh-XG-seH" secondAttribute="bottom" id="n7B-uJ-W3X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hogwartsTableview" destination="3ZG-15-iHV" id="01E-nH-lZs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzP-tl-jTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -360,6 +363,7 @@
                     </view>
                     <connections>
                         <outlet property="houseCrestImageView" destination="ntS-0n-IJy" id="Joi-9s-Njz"/>
+                        <outlet property="houseTableview" destination="Sr0-KB-gJ4" id="TOc-i2-55o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGg-h5-fZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,6 +427,6 @@
         <image name="hogwartscrest" width="800" height="863"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wfe-3e-XTF"/>
+        <segue reference="Ob2-ed-Vcy"/>
     </inferredMetricsTieBreakers>
 </document>
