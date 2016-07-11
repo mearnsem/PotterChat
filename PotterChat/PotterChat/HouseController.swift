@@ -33,9 +33,12 @@ class HouseController {
     init() {
         cloudKitManager = CloudKitManager()
         
-        if housesArray.count == 0 {
-            createInitialHouses()
+        self.fetchNewRecords("House") { 
+            if self.housesArray.count == 0 {
+                self.createInitialHouses()
+            }
         }
+
     }
     
     func createInitialHouses() {

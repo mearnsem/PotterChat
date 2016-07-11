@@ -61,7 +61,7 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     func postPost(text: String) {
         
         for hogwarts in HouseController.sharedHouseController.housesArray {
-            if hogwarts.name == "Hogwarts" {
+            if hogwarts.name == HouseController.keyHogwarts {
                 HouseController.sharedHouseController.addPostToHouse(text, house: hogwarts, user: UserController.sharedUserController.currentUser)
             }
         }

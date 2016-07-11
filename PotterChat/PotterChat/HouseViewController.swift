@@ -71,25 +71,22 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
                 posts = sortedPosts
             }
         }
-        
-        
-        
     }
     
     // MARK: - Textfield Protocol
     
     func postPost(text: String) {
         for house in HouseController.sharedHouseController.housesArray {
-            if house.name == "Gryffindor" {
+            if house.name == HouseController.keyGryffindor {
                 HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
             }
-            if house.name == "Hufflepuff" {
+            if house.name == HouseController.keyHufflepuff {
                 HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
             }
-            if house.name == "Ravenclaw" {
+            if house.name == HouseController.keyRavenclaw {
                 HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
             }
-            if house.name == "Slytherin" {
+            if house.name == HouseController.keySlytherin {
                 HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
             }
         }
