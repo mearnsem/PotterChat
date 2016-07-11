@@ -2,7 +2,7 @@
 //  House+CoreDataProperties.swift
 //  PotterChat
 //
-//  Created by Emily Mearns on 7/1/16.
+//  Created by Emily Mearns on 7/11/16.
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,9 +14,8 @@ import CoreData
 
 extension House {
 
-    @NSManaged var color: String
     @NSManaged var name: String
-    @NSManaged var posts: NSOrderedSet?
-    @NSManaged var users: NSSet?
+    @NSManaged var posts: NSOrderedSet
+    @NSManaged var users: NSSet
 
 }

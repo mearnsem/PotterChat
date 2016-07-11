@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400332AA1D344D3900408CD0 /* House+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400332A81D344D3900408CD0 /* House+CoreDataProperties.swift */; };
+		400332AB1D344D3900408CD0 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400332A91D344D3900408CD0 /* House.swift */; };
 		400F8B6F1D1DE664006182BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F8B6E1D1DE664006182BD /* AppDelegate.swift */; };
 		400F8B741D1DE664006182BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F8B721D1DE664006182BD /* Main.storyboard */; };
 		400F8B761D1DE664006182BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400F8B751D1DE664006182BD /* Assets.xcassets */; };
@@ -28,14 +30,14 @@
 		406BF5941D2589E7006F0572 /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF58C1D2589E7006F0572 /* SyncableObject.swift */; };
 		406BF59B1D258AED006F0572 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5991D258AED006F0572 /* Post+CoreDataProperties.swift */; };
 		406BF59C1D258AED006F0572 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF59A1D258AED006F0572 /* Post.swift */; };
-		406BF5AB1D258E04006F0572 /* House+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5A91D258E04006F0572 /* House+CoreDataProperties.swift */; };
-		406BF5AC1D258E04006F0572 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AA1D258E04006F0572 /* House.swift */; };
 		406BF5AE1D25AE7A006F0572 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AD1D25AE7A006F0572 /* Stack.swift */; };
 		406BF5B01D25B59F006F0572 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */; };
 		406BF5B41D25D391006F0572 /* HousePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406BF5B31D25D391006F0572 /* HousePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		400332A81D344D3900408CD0 /* House+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "House+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		400332A91D344D3900408CD0 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		400F8B6B1D1DE664006182BD /* PotterChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotterChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		400F8B6E1D1DE664006182BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		400F8B731D1DE664006182BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +62,6 @@
 		406BF58C1D2589E7006F0572 /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
 		406BF5991D258AED006F0572 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		406BF59A1D258AED006F0572 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		406BF5A91D258E04006F0572 /* House+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "House+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		406BF5AA1D258E04006F0572 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		406BF5AD1D25AE7A006F0572 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		406BF5AF1D25B59F006F0572 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		406BF5B31D25D391006F0572 /* HousePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousePageViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				400F8B801D1DE89C006182BD /* Model.xcdatamodeld */,
-				406BF5A91D258E04006F0572 /* House+CoreDataProperties.swift */,
-				406BF5AA1D258E04006F0572 /* House.swift */,
+				400332A81D344D3900408CD0 /* House+CoreDataProperties.swift */,
+				400332A91D344D3900408CD0 /* House.swift */,
 				406BF5991D258AED006F0572 /* Post+CoreDataProperties.swift */,
 				406BF59A1D258AED006F0572 /* Post.swift */,
 				401584ED1D26C1B500457561 /* User+CoreDataProperties.swift */,
@@ -239,10 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				406BF5AC1D258E04006F0572 /* House.swift in Sources */,
 				406BF5AE1D25AE7A006F0572 /* Stack.swift in Sources */,
 				406061481D24767F00978FEE /* UserController.swift in Sources */,
-				406BF5AB1D258E04006F0572 /* House+CoreDataProperties.swift in Sources */,
+				400332AB1D344D3900408CD0 /* House.swift in Sources */,
+				400332AA1D344D3900408CD0 /* House+CoreDataProperties.swift in Sources */,
 				400F8B6F1D1DE664006182BD /* AppDelegate.swift in Sources */,
 				406BF5931D2589E7006F0572 /* SyncableObject+CoreDataProperties.swift in Sources */,
 				406BF59C1D258AED006F0572 /* Post.swift in Sources */,

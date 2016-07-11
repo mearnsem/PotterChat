@@ -40,11 +40,11 @@ class HouseController {
     }
     
     func createInitialHouses() {
-        let _ = House(color: "black", name: HouseController.keyHogwarts)
-        let _ = House(color: "gryffindorRed", name: HouseController.keyGryffindor)
-        let _ = House(color: "hufflepuffYellow", name: HouseController.keyHufflepuff)
-        let _ = House(color: "ravenclawBlue", name: HouseController.keyRavenclaw)
-        let _ = House(color: "slytherinGreen", name: HouseController.keySlytherin)
+        let _ = House(name: HouseController.keyHogwarts)
+        let _ = House(name: HouseController.keyGryffindor)
+        let _ = House(name: HouseController.keyHufflepuff)
+        let _ = House(name: HouseController.keyRavenclaw)
+        let _ = House(name: HouseController.keySlytherin)
         saveContext()
     }
     
