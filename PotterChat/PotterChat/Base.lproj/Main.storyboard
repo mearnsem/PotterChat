@@ -312,6 +312,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="Vod-2a-SGD" firstAttribute="leading" secondItem="d0x-RB-uju" secondAttribute="leading" constant="8" id="0ty-AH-csy"/>
                                                                 <constraint firstAttribute="bottom" secondItem="CGa-HS-7gW" secondAttribute="bottom" constant="13" id="1mV-8b-x5R"/>
+                                                                <constraint firstItem="CGa-HS-7gW" firstAttribute="top" secondItem="Vod-2a-SGD" secondAttribute="bottom" constant="8" id="4IN-8P-sWm"/>
                                                                 <constraint firstItem="Vod-2a-SGD" firstAttribute="top" secondItem="RDh-wP-6q4" secondAttribute="bottom" constant="-15" id="EaU-VG-2uM"/>
                                                                 <constraint firstAttribute="trailing" secondItem="RDh-wP-6q4" secondAttribute="trailing" constant="8" id="IPc-hn-HMv"/>
                                                                 <constraint firstItem="CGa-HS-7gW" firstAttribute="leading" secondItem="d0x-RB-uju" secondAttribute="leading" constant="8" id="MRY-lF-6AA"/>
@@ -319,6 +320,11 @@
                                                                 <constraint firstItem="Vod-2a-SGD" firstAttribute="top" secondItem="d0x-RB-uju" secondAttribute="top" constant="8" id="wuR-Zu-xHk"/>
                                                                 <constraint firstItem="RDh-wP-6q4" firstAttribute="top" secondItem="d0x-RB-uju" secondAttribute="top" constant="8" id="xMd-Eg-X4A"/>
                                                             </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="X62-9a-6Qe"/>
+                                                                </mask>
+                                                            </variation>
                                                         </view>
                                                     </subviews>
                                                     <constraints>

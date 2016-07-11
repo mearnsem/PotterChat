@@ -19,20 +19,13 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        postTextField.autocapitalizationType = .Sentences
+        postTextField.autocorrectionType = .No
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        print("Oif")
-    }
     
-    func resignTextFieldFirstResponder() {
-        postTextField.resignFirstResponder()
-    }
+    // MARK: - Buttons
     
     @IBAction func addPostButton(sender: AnyObject) {
         print("Add post button pressed")
@@ -40,6 +33,16 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
             delegate?.postPost(text)
         }
         postTextField.text = ""
+    }
+    
+    // MARK: - Keyboard Handling
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("Oif")
+    }
+    
+    func resignTextFieldFirstResponder() {
+        postTextField.resignFirstResponder()
     }
 
     func keyboardWillShow(notification: NSNotification) {
