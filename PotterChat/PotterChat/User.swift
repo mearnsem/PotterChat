@@ -32,6 +32,9 @@ class User: SyncableObject, CloudKitManagedObject {
         let recordID = CKRecordID(recordName: recordName)
         let record = CKRecord(recordType: recordType, recordID: recordID)
         
+        record["username"] = username
+        record["timestamp"] = timestamp
+        
         return record
     }
     

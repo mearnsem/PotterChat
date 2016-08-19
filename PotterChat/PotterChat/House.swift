@@ -32,7 +32,9 @@ class House: SyncableObject, CloudKitManagedObject {
         let recordID = CKRecordID(recordName: recordName)
         let record = CKRecord(recordType: recordType, recordID: recordID)
         
-        record[House.keyTimestamp] = timestamp
+        record["timestamp"] = timestamp
+        record["name"] = name
+        
         return record
     }
     

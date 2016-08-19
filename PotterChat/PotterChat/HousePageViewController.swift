@@ -18,12 +18,11 @@ class HousePageViewController: UIPageViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("\(house)")
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dataSource = self
+        
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .Forward, animated: true, completion: nil)

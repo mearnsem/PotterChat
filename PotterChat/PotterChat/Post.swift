@@ -37,7 +37,9 @@ class Post: SyncableObject, CloudKitManagedObject {
         let recordID = CKRecordID(recordName: recordName)
         let record = CKRecord(recordType: recordType, recordID: recordID)
         
-        record[Post.keyTimestamp] = timestamp
+        record["timestamp"] = timestamp
+        record["text"] = text
+        
         return record
     }
     

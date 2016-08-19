@@ -24,6 +24,7 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         houseTableview.reloadData()
+        houseTableview.separatorColor = .clearColor()
         
         if UserController.sharedUserController.currentUser != nil {
             requestFullSync()

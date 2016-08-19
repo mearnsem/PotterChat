@@ -22,6 +22,9 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         hogwartsTableview.reloadData()
+        hogwartsTableview.separatorColor = .clearColor()
+        hogwartsTableview.rowHeight = UITableViewAutomaticDimension
+        hogwartsTableview.estimatedRowHeight = 75
         
         if UserController.sharedUserController.currentUser != nil {
             requestFullSync()
@@ -66,6 +69,7 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
             }
         }
         updateWithHouse()
+        textFieldVC?.resignFirstResponder()
         hogwartsTableview.reloadData()
     }
     
@@ -82,10 +86,6 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
         cell?.updateWithPost(post)
         
         return cell ?? PostTableViewCell()
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 75
     }
     
     // MARK: - Navigation
