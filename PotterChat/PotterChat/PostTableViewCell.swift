@@ -23,17 +23,12 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.bgView.layer.cornerRadius = 12
-//        setupCell()
+        self.bgView.layer.cornerRadius = 4
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-//    func setupCell() {
-//        
-//    }
     
     func updateWithPost(post: Post) {
         usernameLabel.text = post.user.username

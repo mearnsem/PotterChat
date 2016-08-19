@@ -21,6 +21,7 @@ class HogwartsViewController: UIViewController, TextFieldViewControllerDelegate,
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
         hogwartsTableview.reloadData()
         hogwartsTableview.separatorColor = .clearColor()
         hogwartsTableview.rowHeight = UITableViewAutomaticDimension

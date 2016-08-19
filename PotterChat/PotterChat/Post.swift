@@ -40,17 +40,31 @@ class Post: SyncableObject, CloudKitManagedObject {
         record["timestamp"] = timestamp
         record["text"] = text
         
+        guard let postRecord = house.cloudKitRecord else {return nil}
+        record["house"] = CKReference(record: postRecord, action: .DeleteSelf)
+        
         return record
     }
     
     convenience required init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
-        guard let timestamp = record.creationDate else {return nil}
+        
+//        guard let postHouse = record["house"] as? CKReference else {
+//            print("Error creating record /(#function)")
+//            return nil
+//        }
+        
         guard let entity = NSEntityDescription.entityForName(Post.keyType, inManagedObjectContext: context) else {
-            fatalError()
+            fatalError("Could not initialize CloudKitManagedObject for Post")
         }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
+        guard let timestamp = record["timestamp"] as? NSDate, let text = record["text"] as? String, let house = record["house"] as? House else {
+            fatalError("Unable to access Post record from CKMO: \(#function)")
+        }
+        
+        self.text = text
         self.timestamp = timestamp
+        self.house = house
         self.recordName = record.recordID.recordName
         self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
     }

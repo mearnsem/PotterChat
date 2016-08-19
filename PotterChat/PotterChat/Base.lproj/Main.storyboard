@@ -154,7 +154,7 @@
                                             </constraints>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellHogwarts" rowHeight="63" id="I2q-No-YYc" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCellHogwarts" rowHeight="63" id="I2q-No-YYc" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="158" width="600" height="63"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I2q-No-YYc" id="J01-E3-eEM">
@@ -281,7 +281,7 @@
                                             </constraints>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellHouse" rowHeight="63" id="AgI-od-C64" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="postCellHouse" rowHeight="63" id="AgI-od-C64" customClass="PostTableViewCell" customModule="PotterChat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="158" width="600" height="63"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AgI-od-C64" id="O1G-ac-ZIo">
