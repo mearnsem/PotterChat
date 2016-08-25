@@ -55,38 +55,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PotterChat/HogwartsViewController.swift"
-            timestampString = "493848884.6666"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "postPost(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PotterChat/HogwartsViewController.swift"
-            timestampString = "493848888.774766"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "postPost(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PotterChat/HouseController.swift"
             timestampString = "493848987.083997"
             startingColumnNumber = "9223372036854775807"
@@ -120,7 +88,7 @@
                   moduleName = "PotterChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/emilymearns/Desktop/DevMtn/Projects/PotterChat/PotterChat/PotterChat/HouseController.swift"
-                  timestampString = "493849332.846207"
+                  timestampString = "493850352.864839"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -135,7 +103,7 @@
                   moduleName = "PotterChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/emilymearns/Desktop/DevMtn/Projects/PotterChat/PotterChat/PotterChat/HouseController.swift"
-                  timestampString = "493849332.846577"
+                  timestampString = "493850352.86521"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -151,29 +119,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PotterChat/CloudKitManagedObject.swift"
-            timestampString = "493849149.568978"
+            filePath = "PotterChat/TextFieldViewController.swift"
+            timestampString = "493850188.409475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "update(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PotterChat/CloudKitManagedObject.swift"
-            timestampString = "493849152.772469"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "update(_:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "addPostButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

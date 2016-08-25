@@ -77,20 +77,23 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
     // MARK: - Textfield Protocol
     
     func postPost(text: String) {
+        let user = UserController.sharedUserController.currentUser
+        
         for house in UserController.sharedUserController.currentUser.houses {
             if house.name == HouseController.keyGryffindor {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: user)
             }
             if house.name == HouseController.keyHufflepuff {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: user)
             }
             if house.name == HouseController.keyRavenclaw {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: user)
             }
             if house.name == HouseController.keySlytherin {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: user)
             }
         }
+        
         updateWithHouse()
         houseTableview.reloadData()
     }

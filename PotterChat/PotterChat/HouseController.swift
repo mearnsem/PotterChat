@@ -73,7 +73,7 @@ class HouseController {
     }
     
     // MARK: - Subscriptions
-    
+    /*
     func subscribeToNewHouse(completion: ((success: Bool, error: NSError?) -> Void)?) {
         let predicate = NSPredicate(value: true)
         
@@ -136,6 +136,7 @@ class HouseController {
             }
         }
     }
+    */
     
     // MARK: - Helper Functions
     
