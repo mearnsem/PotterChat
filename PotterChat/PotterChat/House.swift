@@ -39,12 +39,16 @@ class House: SyncableObject, CloudKitManagedObject {
     }
     
     convenience required init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
-        guard let timestamp = record.creationDate else {return nil}
+        guard let timestamp = record.creationDate, let name = record["name"] as? String else {
+            print("Error creating records")
+            return nil
+        }
         guard let entity = NSEntityDescription.entityForName(House.keyType, inManagedObjectContext: context) else {
             fatalError()
         }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
+        self.name = name
         self.timestamp = timestamp
         self.recordName = record.recordID.recordName
         self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)

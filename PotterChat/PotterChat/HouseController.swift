@@ -61,14 +61,6 @@ class HouseController {
         }
     }
     
-    func deletePostFromHouse() {
-        
-    }
-    
-    func getPostsForHouse() {
-        
-    }
-    
     func saveContext() {
         let moc = Stack.sharedStack.managedObjectContext
         do {
@@ -221,6 +213,20 @@ class HouseController {
                     }
                 })
             })
+        }
+    }
+    
+    func houseWithName(houseRecordID: CKRecordID, completion: ((house: House?) -> Void)?) {
+        cloudKitManager.fetchRecordWithID(houseRecordID) { (record, error) in
+            if let record = record, let house = House(record: record) {
+                if let completion = completion {
+                    completion(house: house)
+                }
+            } else {
+                if let completion = completion {
+                    completion(house: nil)
+                }
+            }
         }
     }
 }

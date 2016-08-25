@@ -17,8 +17,9 @@ class Post: SyncableObject, CloudKitManagedObject {
     static let keyText = "text"
     
     convenience init(text: String, house: House, timestamp: NSDate = NSDate(), user: User, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        
         guard let entity = NSEntityDescription.entityForName(Post.keyType, inManagedObjectContext: context) else {
-            fatalError("Failed to create Post entity")
+            fatalError("Could not initialize Post")
         }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
@@ -40,18 +41,20 @@ class Post: SyncableObject, CloudKitManagedObject {
         record["timestamp"] = timestamp
         record["text"] = text
         
-        guard let postRecord = house.cloudKitRecord else {return nil}
-        record["house"] = CKReference(record: postRecord, action: .DeleteSelf)
+        // Create a CKReference to the House
+        
+        guard let houseRecord = house.cloudKitRecord else {return nil}
+        record["house"] = CKReference(record: houseRecord, action: .DeleteSelf)
         
         return record
     }
     
     convenience required init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
-//        guard let postHouse = record["house"] as? CKReference else {
-//            print("Error creating record /(#function)")
-//            return nil
-//        }
+        guard let postsHouse = record["house"] as? CKReference else {
+            print("Error creating record /(#function)")
+            return nil
+        }
         
         guard let entity = NSEntityDescription.entityForName(Post.keyType, inManagedObjectContext: context) else {
             fatalError("Could not initialize CloudKitManagedObject for Post")
@@ -67,6 +70,26 @@ class Post: SyncableObject, CloudKitManagedObject {
         self.house = house
         self.recordName = record.recordID.recordName
         self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
+        
+        if let house = getPostsForHouse(postsHouse.recordID) {
+            self.house = house
+        }
+    }
+    
+    func getPostsForHouse(recordID: CKRecordID) -> House? {
+        let group = dispatch_group_create()
+        
+        var houseToReturn: House?
+        dispatch_group_enter(group)
+        
+        HouseController.sharedHouseController.houseWithName(recordID) { (house) in
+            houseToReturn = house
+            dispatch_group_leave(group)
+        }
+        
+        dispatch_group_wait(group, dispatch_time(DISPATCH_TIME_NOW, Int64(2*NSEC_PER_SEC)))
+        
+        return houseToReturn
     }
 
 }

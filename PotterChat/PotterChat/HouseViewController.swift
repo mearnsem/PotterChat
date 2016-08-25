@@ -12,7 +12,7 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
 
     @IBOutlet weak var houseCrestImageView: UIImageView!
     
-    var posts = [Post]()
+    var posts: [Post] = []
     var textFieldVC: TextFieldViewController?
     
     @IBOutlet weak var houseTableview: UITableView!
@@ -77,18 +77,18 @@ class HouseViewController: UIViewController, TextFieldViewControllerDelegate, UI
     // MARK: - Textfield Protocol
     
     func postPost(text: String) {
-        for house in HouseController.sharedHouseController.housesArray {
+        for house in UserController.sharedUserController.currentUser.houses {
             if house.name == HouseController.keyGryffindor {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
             }
             if house.name == HouseController.keyHufflepuff {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
             }
             if house.name == HouseController.keyRavenclaw {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
             }
             if house.name == HouseController.keySlytherin {
-                HouseController.sharedHouseController.addPostToHouse(text, house: house, user: UserController.sharedUserController.currentUser)
+                HouseController.sharedHouseController.addPostToHouse(text, house: house as! House, user: UserController.sharedUserController.currentUser)
             }
         }
         updateWithHouse()
